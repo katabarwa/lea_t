@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { onMounted, onUnmounted } from 'vue'
-import CD from '@/public/icons/disc-spin.gif'
-import TV from '@/public/icons/gif_tv_dvd_4.gif'
-import LEA from '@/public/icons/Lea_3D_icon.png'
-import Photo from '@/public/icons/photo-album.png'
-import ART from '@/public/icons/render_000.png'
+import CD from './public/icons/disc-spin.gif'
+import TV from './public/icons/gif_tv_dvd_4.gif'
+import LEA from './public/icons/Lea_3D_icon.png'
+import Photo from './public/icons/photo-album.png'
+import ART from './public/icons/render_000.png'
 
 
 const enter = ref(false)
