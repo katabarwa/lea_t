@@ -117,8 +117,6 @@ const icons = ref([
   overflow: hidden;
 }
 
-
-
 .main {
   display: flex;
   flex-direction: column;
