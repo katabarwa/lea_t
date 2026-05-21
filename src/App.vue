@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { onMounted, onUnmounted } from 'vue'
 import CD from '/src/icons/disc-spin.gif'
-import TV from '/src/icons/gif_tv_dvd_4.gif'
+import TV from '/src/icons/gif_tv_dvd_5.gif'
 import LEA from '/src/icons/Lea_3D_icon.png'
 import Photo from '/src/icons/photo-album.png'
 import ART from '/src/icons/render_000.png'
@@ -58,7 +58,7 @@ onUnmounted(() => {
   clearInterval(interval)
 })
 
-const menu = ref(false)
+const menu = ref(true)
 
 const toggleMenu = () => {
   menu.value = !menu.value
@@ -75,7 +75,7 @@ function toggleFullscreen() {
 }
 
 const icons = ref([
-{ name: 'CD', image: CD},
+{ name: 'Show Reel', image: CD},
 { name: 'Motion Works', 
     image: TV, 
     content: [
@@ -100,8 +100,8 @@ const icons = ref([
       { type: 'image', src:gif19 },
     ]
   },
-{ name: 'LEA', image: LEA },
-{ name: 'Photo', image: Photo },
+{ name: 'Biography', image: LEA },
+{ name: 'Photography', image: Photo },
 { name: 'ART', image: ART },
 ])
 
@@ -120,15 +120,9 @@ function openWindow(item) {
     return
   }
 
-  const vw = window?.innerWidth ?? 800
-  const vh = window?.innerHeight ?? 600
 
-  const zoneW = vw * 0.6
-  const zoneH = vh * 0.6
-  const offsetX = vw * 0.2
-  const offsetY = vh * 0.2
 
-  openWindows.value.push({
+openWindows.value.push({
     id: nextId++,
     name: item.name,
     image: item.image,
@@ -136,8 +130,8 @@ function openWindow(item) {
     focused: true,
     minimized: false,
     maximized: false,
-    x: offsetX + Math.random() * zoneW,
-    y: offsetY + Math.random() * zoneH,
+    x: window.innerWidth * 0.5 + Math.random() * window.innerWidth * 0.1 - 300,
+    y: window.innerHeight * 0.5 + Math.random() * window.innerHeight * 0.1 - 225,
   })
 }
 
@@ -232,13 +226,16 @@ function startDrag(event, win) {
       @click="openWindow(item)"
     >
       <img :src="item.image" :alt="item.name" />
-      <span>{{ item.name }}</span>
+      <div class="iconTitle">
+        <span>{{ item.name }}</span>
+      </div>
+
     </div>
   </div>
 </div>
 
 <!-- Windows (always rendered, outside menu) -->
-<div class="window"
+<div class="window" id="menuWindow"
   v-for="win in openWindows"
   :key="win.id"
   :style="{
@@ -268,16 +265,19 @@ function startDrag(event, win) {
   </div>
 
   <div class="window-body" v-show="!win.minimized">
-    <template v-for="(media, index) in win.content" :key="index">
+    <div class="sunken-panel" >
+      <template v-for="(media, index) in win.content" :key="index">
       <img   v-if="media.type === 'image'" :src="media.src" width="200px"/>
       <video v-else-if="media.type === 'video'" :src="media.src" controls />
       <audio v-else-if="media.type === 'audio'" :src="media.src" controls />
       <p     v-else-if="media.type === 'text'">{{ media.src }}</p>
     </template>
+    </div>
+
   </div>
 </div>
   <footer class="window footer-window">
-    <button @click="toggleMenu">Start</button>
+    <button @click="toggleMenu">Menu</button>
   </footer>
 
  
@@ -286,6 +286,38 @@ function startDrag(event, win) {
 </template>
 
 <style scoped>
+
+.title-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.window {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.window-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sunken-panel {
+  flex: 1;
+  overflow-y: scroll;
+  background-color:rgb(204, 204, 204);
+}
+
+.window-body img{
+  width:185px;
+  padding: 3px;
+  border-radius: 10px;
+}
 
 .window .title-bar {
   color: azure;
@@ -297,10 +329,24 @@ function startDrag(event, win) {
   text-align: center;
 }
 
+#menuWindow {
+  width: 600px;
+  height: 450px;
+}
+
 
 
 .icon-grid .icon-item img{
   cursor: pointer;
+}
+
+.icon-item {
+  color:cornflowerblue ;
+  text-align: center;
+}
+
+.iconTitle {
+  margin-top: 5px;
 }
 
 window.fullscreen {
@@ -323,8 +369,8 @@ window.fullscreen {
 }
 
 .icon-item img {
-  width: 8em;
-  height: 8em;
+  width: 11em;
+  height: 11em;
 
   image-rendering: pixelated;
   display: block;
@@ -337,7 +383,7 @@ window.fullscreen {
   justify-content: center;
   align-items: center;  
   flex-direction: row;
-  gap: 70px;
+  gap: 50px;
   width: 100%;
   padding: 70px;
   overflow: hidden;
