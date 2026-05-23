@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { onMounted, onUnmounted } from 'vue'
 import CD from '/src/icons/disc-spin.gif'
 import TV from '/src/icons/gif_tv_dvd_5.gif'
@@ -25,6 +25,7 @@ import gif16 from '/src/dvd/lea-gif-4.gif'
 import gif17 from '/src/dvd/lea-gif-5.gif'
 import gif18 from '/src/dvd/lea-gif-6.gif'
 import gif19 from '/src/dvd/new.gif'
+
 
 
 
@@ -75,30 +76,18 @@ function toggleFullscreen() {
 }
 
 const icons = ref([
-{ name: 'Show Reel', image: CD},
+{ name: 'Show Reel', image: CD,
+  content: [
+    {type: 'vimeo', src: 'https://player.vimeo.com/video/842262667?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}
+  ]
+},
 { name: 'Motion Works', 
     image: TV, 
-    content: [
-      { type: 'image', src: gif1},
-      { type: 'image', src:gif2 },
-      { type: 'image', src:gif3 },
-      { type: 'image', src:gif4 },
-      { type: 'image', src:gif5 },
-      { type: 'image', src:gif6 },
-      { type: 'image', src:gif7  },
-      { type: 'image', src:gif8  },
-      { type: 'image', src:gif9  },
-      { type: 'image', src:gif10  },
-      { type: 'image', src:gif11  },
-      { type: 'image', src:gif12  },
-      { type: 'image', src:gif13 },
-      { type: 'image', src:gif14 },
-      { type: 'image', src:gif15 },
-      { type: 'image', src:gif16 },
-      { type: 'image', src:gif17 },
-      { type: 'image', src:gif18 },
-      { type: 'image', src:gif19 },
-    ]
+    tabs: [
+    { id: 'all', label: 'All', gifs: [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9, gif10, gif11, gif12, gif13, gif14, gif15, gif16, gif17, gif18, gif19] },
+    { id: 'Reel', label: 'Show Reel', gifs: [gif1, gif2] }
+
+  ]
   },
 { name: 'Biography', image: LEA },
 { name: 'Photography', image: Photo },
@@ -123,13 +112,15 @@ function openWindow(item) {
 
 
 openWindows.value.push({
-    id: nextId++,
-    name: item.name,
-    image: item.image,
-    content: item.content ?? [],
-    focused: true,
-    minimized: false,
-    maximized: false,
+  id: nextId++,
+  name: item.name,
+  image: item.image,
+  content: item.content ?? [],
+  tabs: item.tabs ?? [],
+  activeTab: item.tabs?.[0]?.id ?? null,
+  focused: true,
+  minimized: false,
+  maximized: false,
     x: window.innerWidth * 0.5 + Math.random() * window.innerWidth * 0.1 - 300,
     y: window.innerHeight * 0.5 + Math.random() * window.innerHeight * 0.1 - 225,
   })
@@ -177,6 +168,19 @@ function startDrag(event, win) {
   window.addEventListener('mousemove', onMove)
   window.addEventListener('mouseup', onUp)
 }
+
+
+// const tabs = [
+//   { id: 'all', label: 'Desktop',
+//     gifs: [gif1, gif2]
+//    },
+//   // { id: 'tab1', label: 'My computer' },
+//   // { id: 'tab2', label: 'Control panel' },
+//   // { id: 'tab3', label: 'Devices manager' },
+//   // { id: 'tab4', label: 'Hardware profiles' },
+// ]
+
+// const currentTab = computed(() => tabs.find(t => t.id === activeTab.value))
 
 </script>
 
@@ -264,17 +268,34 @@ function startDrag(event, win) {
     </div>
   </div>
 
-  <div class="window-body" v-show="!win.minimized">
-    <div class="sunken-panel" >
-      <template v-for="(media, index) in win.content" :key="index">
-      <img   v-if="media.type === 'image'" :src="media.src" width="200px"/>
-      <video v-else-if="media.type === 'video'" :src="media.src" controls />
-      <audio v-else-if="media.type === 'audio'" :src="media.src" controls />
-      <p     v-else-if="media.type === 'text'">{{ media.src }}</p>
-    </template>
-    </div>
+  <div class="window-body">
+    <menu role="tablist">
+  <li
+    v-for="tab in win.tabs"
+    :key="tab.id"
+    role="tab"
+    :aria-selected="win.activeTab === tab.id"
+    @click="win.activeTab = tab.id"
+  >
+    <a>{{ tab.label }}</a>
+  </li>
+</menu>
 
+    <div id="motionWindow" class="window" role="tabpanel">
+      <div class="window-body">
+        <div class="sunken-panel" >
+          <div
+    v-for="gif in win.tabs.find(t => t.id === win.activeTab)?.gifs ?? []"
+    :key="gif"
+    class="crop"
+  >
+    <img :src="gif" />
   </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
   <footer class="window footer-window">
     <button @click="toggleMenu">Menu</button>
@@ -287,10 +308,21 @@ function startDrag(event, win) {
 
 <style scoped>
 
+
+
 .title-bar {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+header {
+  display: flex;
+  flex-direction: row!important;
+}
+
+#motionWindow{
+  height:100%;
 }
 
 .window {
@@ -305,18 +337,34 @@ function startDrag(event, win) {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height:100%;
 }
 
 .sunken-panel {
-  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
   overflow-y: scroll;
   background-color:rgb(204, 204, 204);
+  height:100%;
 }
 
+.crop {
+  aspect-ratio: 16 / 9;
+width: 33%;
+height: 33%;
+}
+
+.crop img {
+  height: 86%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
 .window-body img{
-  width:185px;
   padding: 3px;
   border-radius: 10px;
+  
 }
 
 .window .title-bar {
