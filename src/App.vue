@@ -6,25 +6,54 @@ import TV from '/src/icons/gif_tv_dvd_5.gif'
 import LEA from '/src/icons/Lea_3D_icon.png'
 import Photo from '/src/icons/photo-album.png'
 import ART from '/src/icons/render_000.png'
-import gif1 from '/src/dvd/DEMO_LEA_V4_4_1.gif'
-import gif2 from '/src/dvd/DEMO_LEA_V4_5_1.gif'
-import gif3 from '/src/dvd/DEMO_LEA_V4_6_1.gif'
-import gif4 from '/src/dvd/DEMO_LEA_V4_7_1.gif'
-import gif5 from '/src/dvd/DEMO_LEA_V4_8_1.gif'
-import gif6 from '/src/dvd/DEMO_LEA_V4_9_1.gif'
-import gif7 from '/src/dvd/DEMO_LEA_V4_10_1.gif'
-import gif8 from '/src/dvd/DEMO_LEA_V4_11_1.gif'
-import gif9 from '/src/dvd/DEMO_LEA_V4_12_1.gif'
-import gif10 from '/src/dvd/DEMO_LEA_V4_13_1.gif'
-import gif11 from '/src/dvd/DEMO_LEA_V4_14_1.gif'
-import gif12 from '/src/dvd/DEMO_LEA_V4_15_1.gif'
-import gif13 from '/src/dvd/lea-gif-1.gif'
-import gif14 from '/src/dvd/lea-gif-2.gif'
-import gif15 from '/src/dvd/lea-gif-3.gif'
-import gif16 from '/src/dvd/lea-gif-4.gif'
-import gif17 from '/src/dvd/lea-gif-5.gif'
-import gif18 from '/src/dvd/lea-gif-6.gif'
-import gif19 from '/src/dvd/new.gif'
+
+
+// ─── REMOVE all these local gif imports ───────────────────────────────────────
+// import gif1 from '/src/dvd/DEMO_LEA_V4_4_1.gif'   ← delete these 19 lines
+// ...
+// import gif19 from '/src/dvd/new.gif'
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── R2 CONFIG — only line you ever need to change ───────────────────────────
+const R2 = 'https://pub-68ca04e89a04442090a6f0cd319f22c4.r2.dev'
+// ─────────────────────────────────────────────────────────────────────────────
+
+
+const gifs = {
+  apophis:           `${R2}/Apophis_Onprendradel'avanceplustard.gif`,
+bibiClubFeu:       `${R2}/BIBI_CLUB_FEU.gif`,
+bibiClubNuit:      `${R2}/Bibi%20Clb_La%20Nuit.gif`,
+bibiClubMatin:     `${R2}/Bibi%20Club_Le%20Matin.gif`,
+bibiClubParasite:  `${R2}/Bibi%20Club_Parasite.gif`,
+bibiClubFemme:     `${R2}/Bibi%20Club_femme%20lady.gif`,
+bonEnfant:         `${R2}/Bon%20Enfant_minimum.gif`,
+claudiaBouvette:   `${R2}/Claudia%20Bouvette_BBZ.gif`,
+emily:             `${R2}/Emily.gif`,
+goodbyeKarelle1:   `${R2}/Goodbye%20Karelle_Moonroad_OPTION_1.gif`,
+goodbyeKarelle2:   `${R2}/GoodbyeKarelle_MoonRoad_OPTION_2.gif`,
+hubertDimanche:    `${R2}/HUBERT_LENOIR_DIMANCHE%20SOIR.gif`,
+hubertBunny:       `${R2}/Hubert%20Lenoir_Hunny%20Bunny.gif`,
+hubertSecret:      `${R2}/Hubert%20Lenoir_Secret.gif`,
+hubertULCC:        `${R2}/Hubert%20Lenoir_ULCC.gif`,
+louAdrianne:       `${R2}/LOUADRIANNECASSIDY_LAPLUIENETOMBEJAMAISSURTOIy.gif`,
+lysandre5052:      `${R2}/Lysandre_5052..gif`,
+lysandre5052HD:    `${R2}/Lysandre_5052_Master_HD.gif`,
+lysandrePluie:     `${R2}/Lysandre_lodeurdelapluie.gif`,
+miroirNNao:        `${R2}/MIROIR_%20N%20NAO..gif`,
+nNaoLive:          `${R2}/N%20NAO%20-%20Live%20Session.gif`,
+patrickChurch:     `${R2}/Patrick-Chuch_Beauty-Story.gif`,
+poisonResort:      `${R2}/Poison%20Resort_shortfilm.gif`,
+robertRobert:      `${R2}/Robert%20Robert_L'e%CC%81te%CC%81%20je%20m'ennuie_.gif`,
+sophiaBel:         `${R2}/Sophia%20Bel_2AM.gif`,
+aoife:             `${R2}/aoife_nessa_frances_this_still_life.gif`,
+claudeMckenzie:    `${R2}/claude_mckenzie.gif`,
+geeseOption1:      `${R2}/geese_Taxes_UKVMA_OPTION_1.gif`,
+geeseOption2:      `${R2}/geese_taxes_OPTION_2.gif`,
+lysandrePaon:      `${R2}/lysandre_le_paon_impossible.gif`,
+ofranda:           `${R2}/ofranda_shortfilm.gif`,
+theHorrors:        `${R2}/the_horrors_ariel.gif`,
+  
+}
 
 
 
@@ -83,16 +112,35 @@ const icons = ref([
 },
 { name: 'Motion Works', 
     image: TV, 
-    tabs: [
-    { id: 'all', label: 'All', gifs: [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8, gif9, gif10, gif11, gif12, gif13, gif14, gif15, gif16, gif17, gif18, gif19] },
-    { id: 'Reel', label: 'Show Reel', gifs: [gif1, gif2] }
-
-  ]
+    branches: [
+      {
+        label: 'DIRECTING & DOP',
+        tabs: [
+          { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
+          { label: 'Music Videos ', gifs: [gifs.bibiClubNuit, gifs.bibiClubFemme,gifs.bibiClubMatin, gifs.bibiClubParasite,
+          gifs.bibiClubFeu, gifs.bonEnfant,gifs.claudiaBouvette, gifs.goodbyeKarelle1,gifs.goodbyeKarelle2, 
+          gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
+          gifs.sophiaBel,
+          ] },
+        ]
+      },
+      {
+        label: 'DOP',
+        tabs: [
+          { label: 'Music Videos', gifs: [gifs.aoife, gifs.apophis, gifs.claudeMckenzie,
+          gifs.geeseOption1, gifs.geeseOption2, gifs.hubertBunny, gifs.hubertSecret,
+          gifs.hubertULCC, gifs.hubertDimanche, gifs.louAdrianne, gifs.lysandrePaon,
+          gifs.miroirNNao, gifs.nNaoLive, gifs.robertRobert, gifs.theHorrors,
+          ] },
+          { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort] },
+        ]
+      },
+]
   },
-{ name: 'Biography', image: LEA },
-{ name: 'Photography', image: Photo },
-{ name: 'ART', image: ART },
-])
+      { name: 'Biography', image: LEA },
+      { name: 'Photography', image: Photo },
+      { name: 'ART', image: ART },
+      ])
 
 // Track open windows as an array of objects
 
@@ -112,12 +160,16 @@ function openWindow(item) {
 
 
 openWindows.value.push({
+  branches: item.branches ?? null,
   id: nextId++,
   name: item.name,
   image: item.image,
   content: item.content ?? [],
   tabs: item.tabs ?? [],
   activeTab: item.tabs?.[0]?.id ?? null,
+  activeBranch: 0,  // ← which branch button is active
+  activeTab: 0,   
+  branchSelected: false,
   focused: true,
   minimized: false,
   maximized: false,
@@ -170,17 +222,7 @@ function startDrag(event, win) {
 }
 
 
-// const tabs = [
-//   { id: 'all', label: 'Desktop',
-//     gifs: [gif1, gif2]
-//    },
-//   // { id: 'tab1', label: 'My computer' },
-//   // { id: 'tab2', label: 'Control panel' },
-//   // { id: 'tab3', label: 'Devices manager' },
-//   // { id: 'tab4', label: 'Hardware profiles' },
-// ]
 
-// const currentTab = computed(() => tabs.find(t => t.id === activeTab.value))
 
 </script>
 
@@ -246,7 +288,7 @@ function startDrag(event, win) {
     position: 'absolute',
     zIndex: win.focused ? 10 : 1,
     ...(win.maximized
-      ? { left: '0', top: '44px', width: '100vw', height: '90vh' }
+      ? { left: '0', top: '44px', width: '100vw', height: '100vh' }
       : win.minimized
         ? { left: win.x + 'px', top: win.y + 'px', height: '44px', overflow: 'hidden' }
         : { left: win.x + 'px', top: win.y + 'px' }
@@ -269,31 +311,57 @@ function startDrag(event, win) {
   </div>
 
   <div class="window-body">
-    <menu role="tablist">
-  <li
-    v-for="tab in win.tabs"
-    :key="tab.id"
-    role="tab"
-    :aria-selected="win.activeTab === tab.id"
-    @click="win.activeTab = tab.id"
-  >
-    <a>{{ tab.label }}</a>
-  </li>
-</menu>
+        <menu role="tablist">
+              <li
+                v-for="tab in win.tabs"
+                :key="tab.id"
+                role="tab"
+                :aria-selected="win.activeTab === tab.id"
+                @click="win.activeTab = tab.id"
+              >
+                <a>{{ tab.label }}</a>
+              </li>
+        </menu>
 
-    <div id="motionWindow" class="window" role="tabpanel">
-      <div class="window-body">
-        <div class="sunken-panel" >
-          <div
-    v-for="gif in win.tabs.find(t => t.id === win.activeTab)?.gifs ?? []"
-    :key="gif"
-    class="crop"
-  >
-    <img :src="gif" />
-  </div>
-          </div>
+
+
+    <!-- Branch buttons -->
+    <div class="branch-controls">
+      <button
+        @click="win.activeBranch = 0; win.activeTab = 0; win.branchSelected = true"
+        :class="{ active: win.activeBranch === 0 }"
+      >DIRECTING & DOP</button>
+      <button
+        @click="win.activeBranch = 1; win.activeTab = 0; win.branchSelected = true"
+        :class="{ active: win.activeBranch === 1 }"
+      >DOP</button>
+    </div>
+
+    <!-- 98.css tabs -->
+    <menu role="tablist"  :style="{ display: win.branchSelected ? 'flex' : 'none' }">
+      <li
+        v-for="(tab, t) in win.branches[win.activeBranch].tabs"
+        :key="t"
+        role="tab"
+        :aria-selected="win.activeTab === t"
+        @click="win.activeTab = t"
+      >
+        <a>{{ tab.label }}</a>
+      </li>
+    </menu>
+
+    <div class="sunken-panel" :style="{ display: win.branchSelected ? 'flex' : 'none' }">
+      <div
+        v-for="gif in win.branches[win.activeBranch].tabs[win.activeTab].gifs"
+        :key="gif"
+        class="crop"
+      >
+        <img :src="gif" />
       </div>
     </div>
+
+
+
   </div>
   
 </div>
@@ -307,6 +375,18 @@ function startDrag(event, win) {
 </template>
 
 <style scoped>
+
+menu {
+  display: flex;
+ flex-direction: row;
+ align-content: center;
+  width: 50%;
+}
+
+menu li {
+  flex: 1 !important;
+  text-align: center;
+}
 
 
 
@@ -323,6 +403,21 @@ header {
 
 #motionWindow{
   height:100%;
+  border: none!important;
+
+}
+
+.branch-controls {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.branch-controls button {
+  width: 100%!important;
+  height: 30px;
 }
 
 .window {
@@ -344,20 +439,22 @@ header {
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
-  background-color:rgb(204, 204, 204);
+  background-color:silver;
   height:100%;
 }
 
 .crop {
-  aspect-ratio: 16 / 9;
-width: 33%;
-height: 33%;
+  width: 33%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .crop img {
-  height: 86%;
   width: 100%;
+
   object-fit: cover;
+  display: block;
 }
 
 
@@ -399,6 +496,7 @@ height: 33%;
 
 window.fullscreen {
   width: 100%;
+  height: 90%;
 }
 
 .titleWrapper {
