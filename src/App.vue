@@ -431,25 +431,23 @@ HER WORK HAS BEEN SHOWN INTERNATIONALLY IN SOLO AND GROUP EXHIBITIONS IN MONTRÉ
   
   
   
-          photos.newBondStreet1, photos.newBondStreet2, photos.newBondStreet3,
-  photos.newBondStreet4, photos.newBondStreet5, photos.newBondStreet6,
-  photos.newBondStreetPulsemag1, photos.newBondStreetPulsemag2, photos.newBondStreetPulsemag3,
-  photos.albumCoverArjunaOakes2019, photos.albumCoverDJFuckoff2025, photos.albumCoverPhoebeJames,
-  photos.aime2024, photos.albumCoverArianeRoy, photos.albumCoverReflexiones,
-  photos.alexa, 
-  photos.atallephdreony,
-    photos.britney2024, photos.calissa2019,
+          
+  
+] },
+          { label: 'AlbumCover Art', photos: [ photos.albumCoverArjunaOakes2019, photos.albumCoverDJFuckoff2025, photos.albumCoverPhoebeJames,
+          photos.aime2024, photos.albumCoverArianeRoy, photos.albumCoverReflexiones,
+          ] },
+          { label: 'Editorial', photos: [   photos.aime2024, 
+              photos.alexa, 
+              photos.atallephdreony, 
+              photos.britney2024, photos.calissa2019,
   photos.calissaTeiniker2019, photos.calissaPiha1, photos.calissaPiha4copy,
   photos.calissaPiha5, photos.calissaPiha7, photos.calissaPiha8,
   photos.calissaPiha, photos.carole2019, photos.chloe2024,
   photos.claudia2023_1, photos.claudia2023_2, photos.claudia2023_3,
   photos.claudia2023_4, photos.claudia4, photos.claudiaAcrylicTransfer,
-  photos.crystal2019, photos.documentationArchives1, photos.documentationArchives2,
-  photos.documentationArchives3, photos.documentationArchives4, photos.documentationArchives5,
-  photos.documentationArchives6, photos.documentationArchives7, photos.documentationArchives8,
-  photos.documentationArchives9, photos.dreony2020_1, photos.dreony2020_2,
-  photos.femmeFatale1, photos.femmeFatale2, photos.femmeFatale3,
- 
+  photos.crystal2019,
+  photos.dreony2020_1, photos.dreony2020_2,
   photos.hunnyBunny2019, photos.kanePortraits26, photos.imageAssetCopy,
   photos.kane2019, 
   photos.louis2018, photos.louis2019,
@@ -457,27 +455,11 @@ HER WORK HAS BEEN SHOWN INTERNATIONALLY IN SOLO AND GROUP EXHIBITIONS IN MONTRÉ
   photos.mincaColombia2017, photos.october2019, photos.october2019_2,
   photos.oliviaBrethault1, photos.oliviaBrethault2, photos.oliviaBrethault3,
   photos.oliviaBrethault4, photos.oliviaBrethault5, photos.oliviaBrethault6,
-  photos.oliviaBrethault7, photos.outtakeCommissionLivre, 
-  photos.putAShirtOn, photos.putAShirtOn2, photos.putAShirtOn3,
-  photos.putAShirtOn5, photos.putAShirtOn6, photos.putAShirtOn7,
-  photos.putAShirtOn8, photos.putAShirtOn9, photos.putAShirtOn10,
-  photos.putAShirtOn11, photos.putAShirtOn12, photos.putAShirtOn13,
-  photos.putAShirtOnDocumentation, photos.putAShirtOnFlyer,
-  
-   photos.secretArnaud, photos.secretCarole,
-   photos.secretNoemie, photos.stephenMarr2019,
-  photos.stephenMarr2019_2, photos.samuelGougoux2019, photos.sculptura1,
-  photos.sculptura2, photos.sculptura3, photos.sculptura4,
-  photos.sculptura5, photos.sculptura6, photos.sculptura7,
-  photos.sculptura8, photos.singleCoverStoylov, photos.strength2019,
-  photos.synchronMagazine, photos.thailand2018, photos.variationsOnFeet,
-  photos.variationsOnFeet1, photos.variationsOnFeet2, photos.vestibule2023_1,
+  photos.oliviaBrethault7, photos.outtakeCommissionLivre, photos.secretArnaud, photos.secretCarole,
+  photos.secretNoemie, photos.stephenMarr2019, photos.stephenMarr2019_2, photos.thailand2018, 
   photos.vestibule2023_2, photos.vogueItaly, photos.vogueItaly1,
   photos.vogueItaly2,
-] },
-          { label: 'AlbumCover Art', photos: [ gifs.ofranda, gifs.poisonResort
-          ] },
-          { label: 'Editorial', photos: [ gifs.ofranda, gifs.poisonResort
+              
           ] },
           { label: 'Landscapes', photos: [  photos.aotearoa2023,
             photos.hotNCold2023, photos.blueSpring2022, photos.aotearoa2018, photos.mincaColumbia2017,
@@ -777,7 +759,7 @@ function startDrag(event, win) {
                 :key="photo"
                 class="photoItem"
               >
-                <img :src= "photo" />
+                <img :src= "photo"  class="imgCrop">
               </div>
         </div>
 
@@ -940,12 +922,16 @@ function startDrag(event, win) {
   break-inside: avoid;
   margin-bottom: 6px;
   width: 100%;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .photoItem img {
   width: 100%;   /* stretches to fill the column */
   height: auto;  /* lets the natural aspect ratio breathe */
+  display: block;
+  border-radius: 10px!important;
+  object-fit: cover;
   display: block;
 }
 
@@ -1059,6 +1045,13 @@ header {
   border-radius: 10px;
   aspect-ratio: 16/9;
 
+  object-fit: cover;
+  display: block;
+}
+
+.imgCrop {
+  width: 100%;
+  border-radius: 10px;
   object-fit: cover;
   display: block;
 }
