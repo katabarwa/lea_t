@@ -1145,7 +1145,7 @@ window.fullscreen {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
 }
 
