@@ -364,11 +364,11 @@ function toggleFullscreen() {
 }
 
 const icons = ref([
-      { name: 'Show Reel', image: CD,
-        content: [
-          {type: 'vimeo', src: 'https://player.vimeo.com/video/842262667?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}
-        ]
-      },
+{ name: 'Show Reel', image: CD, type: 'vimeo',
+  content: [
+    { type: 'vimeo', src: 'https://player.vimeo.com/video/842262667?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479' }
+  ]
+},
       { name: 'Motion Work', 
           image: TV,  type: 'motion',
           branches: [
@@ -398,11 +398,17 @@ const icons = ref([
         },
       { name: 'Biography', image: LEA,
         type: 'bio',
-  text: `LÉA TAILLEFER IS A MONTRÉAL AND LONDON-BASED MULTIDISCIPLINARY ARTIST, FILMMAKER, CINEMATOGRAPHER AND PHOTOGRAPHER WORKING ACROSS ART, FILM, MUSIC AND FASHION.
+        html: `LÉA TAILLEFER IS A MONTRÉAL AND LONDON-BASED MULTIDISCIPLINARY ARTIST, 
+        FILMMAKER, CINEMATOGRAPHER AND PHOTOGRAPHER WORKING ACROSS ART, FILM, MUSIC AND FASHION.
 
-SHE HAS WORKED WITH ARTISTS SUCH AS HUBERT LENOIR, GEESE, ARIANE ROY, LOU-ADRIANE CASSIDY, BON ENFANT, CLAUDIA BOUVETTE AND GAB BOIS, AND HAS COLLABORATED WITH DIRECTORS INCLUDING NOEL PAUL, NOÉMIE D. LECLERC, VJOSANA SHKURTI AND LUCA PISCOPO. HER MUSIC VIDEO CINEMATOGRAPHY HAS BEEN SHORTLISTED AT THE UK MUSIC VIDEO AWARDS AND THE 1.4 AWARDS.
+SHE HAS WORKED WITH ARTISTS SUCH AS HUBERT LENOIR, GEESE, ARIANE ROY, LOU-ADRIANE CASSIDY, 
+BON ENFANT, CLAUDIA BOUVETTE AND GAB BOIS, AND HAS COLLABORATED WITH DIRECTORS INCLUDING NOEL PAUL, 
+NOÉMIE D. LECLERC, VJOSANA SHKURTI AND LUCA PISCOPO. HER MUSIC VIDEO CINEMATOGRAPHY HAS BEEN 
+SHORTLISTED AT THE UK MUSIC VIDEO AWARDS AND THE 1.4 AWARDS.
 
-HER WORK HAS BEEN SHOWN INTERNATIONALLY IN SOLO AND GROUP EXHIBITIONS IN MONTRÉAL, AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS INTERVIEW, PAPER, PHOTO VOGUE ITALIA, ROLLING STONE, MIXMAG, AND CONTRIBUTOR MAGAZINE.`
+HER WORK HAS BEEN SHOWN INTERNATIONALLY IN SOLO AND GROUP EXHIBITIONS IN MONTRÉAL, 
+AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a href="https://www.interviewmagazine.com/music/hubert-lenoir-on-mosh-pits-freestyle-skiing-and-his-daring-new-album">INTERVIEW</a>, <a href="https://www.papermag.com/sophia-bel-2am">PAPER</a>,
+ PHOTO <a href="https://www.vogue.com/photovogue/photographers/203514">VOGUE ITALIA</a>, <a href="https://ca.rollingstone.com/fr/musique/ariane-roy/">ROLLING STONE</a>,<a href="https://mixmag.net/feature/the-mix-069-dj-fuckoff"> MIXMAG</a>, AND <a href="https://contributormagazine.com/fashion-story-lust-of-the-night/">CONTRIBUTOR MAGAZINE</a>.`
        },
       { name: 'Photography', image: Photo, type: 'photos',
       tabs: [
@@ -564,6 +570,7 @@ function openWindow(item) {
     photos: item.photos ?? null,
     type: item.type ?? null,
     text: item.text ?? null,
+    html: item.html ?? null,
     branches: item.branches ?? null,
     id: nextId++,
     name: item.name,
@@ -721,6 +728,7 @@ function startDrag(event, win) {
           'is-maximized': win.maximized,
         }"
       >
+      
       <div class="title-bar" @mousedown="startDrag($event, win)">
         <span>{{ win.name }}</span>
         <div class="title-bar-controls">
@@ -735,7 +743,7 @@ function startDrag(event, win) {
     <!-- bio -->
       <div v-if="win.type === 'bio'" class="window-body bio-body">
         <div class="sunken-panel" id="bio" >
-          <p>{{ win.text }}</p>  
+          <p v-html="win.html"></p>
         </div>
     </div> 
 
@@ -766,7 +774,18 @@ function startDrag(event, win) {
   </div>
 </div>
 
-
+<div v-if="win.type === 'vimeo'" class="window-body">
+  <iframe
+    v-for="v in win.content"
+    :key="v.src"
+    :src="v.src"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
 
     <!-- motion -->
       <div v-else-if="win.type==='motion'" class="window-body">
