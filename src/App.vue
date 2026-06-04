@@ -6,11 +6,13 @@ import TV from '/src/icons/gif_tv_dvd_5.gif'
 import LEA from '/src/icons/Lea_3D_icon.png'
 import Photo from '/src/icons/photo-album.png'
 import ART from '/src/icons/render_000.png'
+import SDTE from '/src/assets/sdte.gif'
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─── R2 CONFIG — only line you ever need to change ───────────────────────────
 const R2 = 'https://pub-68ca04e89a04442090a6f0cd319f22c4.r2.dev'
 // ─────────────────────────────────────────────────────────────────────────────
+
 
 
 const gifs = {
@@ -307,7 +309,12 @@ vogueItaly1:               `${R2}/Vogue%20Italy_1.jpg`,
 vogueItaly2:               `${R2}/Vogue%20Italy_2.jpg`,
 }
 
+const loadingGif = ref(null)        // which item is queued
+const gifDone = ref(false)
 
+const SDTE_DURATION = 2800   
+
+const dropdownOpen = ref(false)
 
 
 
@@ -357,38 +364,38 @@ function toggleFullscreen() {
 }
 
 const icons = ref([
-{ name: 'Show Reel', image: CD,
-  content: [
-    {type: 'vimeo', src: 'https://player.vimeo.com/video/842262667?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}
-  ]
-},
-{ name: 'Motion Work', 
-    image: TV,  type: 'motion',
-    branches: [
-      {
-        label: 'DIRECTING & DOP',
-        tabs: [
-          { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
-          { label: 'Music Videos ', gifs: [gifs.bibiClubNuit, gifs.bibiClubFemme,gifs.bibiClubMatin, gifs.bibiClubParasite,
-          gifs.bibiClubFeu, gifs.bonEnfant,gifs.claudiaBouvette, gifs.goodbyeKarelle1,gifs.goodbyeKarelle2, 
-          gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
-          gifs.sophiaBel,
-          ] },
+      { name: 'Show Reel', image: CD,
+        content: [
+          {type: 'vimeo', src: 'https://player.vimeo.com/video/842262667?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'}
         ]
       },
-      {
-        label: 'DOP',
-        tabs: [
-          { label: 'Music Videos', gifs: [gifs.aoife, gifs.apophis, gifs.claudeMckenzie,
-          gifs.geeseOption1, gifs.geeseOption2, gifs.hubertBunny, gifs.hubertSecret,
-          gifs.hubertULCC, gifs.hubertDimanche, gifs.louAdrianne, gifs.lysandrePaon,
-          gifs.miroirNNao, gifs.nNaoLive, gifs.robertRobert, gifs.theHorrors,
-          ] },
-          { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort] },
-        ]
-      },
-]
-  },
+      { name: 'Motion Work', 
+          image: TV,  type: 'motion',
+          branches: [
+            {
+              label: 'DIRECTING & DOP',
+              tabs: [
+                { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
+                { label: 'Music Videos ', gifs: [gifs.bibiClubNuit, gifs.bibiClubFemme,gifs.bibiClubMatin, gifs.bibiClubParasite,
+                gifs.bibiClubFeu, gifs.bonEnfant,gifs.claudiaBouvette, gifs.goodbyeKarelle1,gifs.goodbyeKarelle2, 
+                gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
+                gifs.sophiaBel,
+                ] },
+              ]
+            },
+            {
+              label: 'DOP',
+              tabs: [
+                { label: 'Music Videos', gifs: [gifs.aoife, gifs.apophis, gifs.claudeMckenzie,
+                gifs.geeseOption1, gifs.geeseOption2, gifs.hubertBunny, gifs.hubertSecret,
+                gifs.hubertULCC, gifs.hubertDimanche, gifs.louAdrianne, gifs.lysandrePaon,
+                gifs.miroirNNao, gifs.nNaoLive, gifs.robertRobert, gifs.theHorrors,
+                ] },
+                { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort] },
+              ]
+            },
+      ]
+        },
       { name: 'Biography', image: LEA,
         type: 'bio',
   text: `LÉA TAILLEFER IS A MONTRÉAL AND LONDON-BASED MULTIDISCIPLINARY ARTIST, FILMMAKER, CINEMATOGRAPHER AND PHOTOGRAPHER WORKING ACROSS ART, FILM, MUSIC AND FASHION.
@@ -511,18 +518,38 @@ HER WORK HAS BEEN SHOWN INTERNATIONALLY IN SOLO AND GROUP EXHIBITIONS IN MONTRÉ
           ] },
         ]
        },
-      { name: 'ART', 
-      image: ART , type: "photos",
-      photos: [
-          photos.asbDocumentationW1, photos.asbDocumentationAtalleph2,
-  photos.asbDocumentationAtalleph3, photos.asbDocumentationAtalleph4, photos.asbDocumentationCrucifixion1,
-  photos.asbDocumentationCrucifixion2, photos.asbDocumentationCrucifixion4, photos.asbDocumentationHand1,
-  photos.asbDocumentationHand2, photos.asbDocumentationKnife1, photos.asbDocumentationKnife2,
-  photos.asbDocumentationMarks1, photos.asbDocumentationMarks2,
-]
-
-      
-      }
+       { name: 'ART', 
+  image: ART, type: "photos",
+  tabs: [ 
+    { label: '2025 Archive', photos: [
+    photos.documentationArchives1, photos.documentationArchives2,
+  photos.documentationArchives3, photos.documentationArchives4, photos.documentationArchives5,
+  photos.documentationArchives6, photos.documentationArchives7, photos.documentationArchives8,
+  photos.documentationArchives9,
+    ]},
+    { label: '2024 - A Sacrificed Body (ASB)', photos: [
+      photos.asbDocumentationW1, photos.asbDocumentationAtalleph2,
+      photos.asbDocumentationAtalleph3, photos.asbDocumentationAtalleph4,
+      photos.asbDocumentationCrucifixion1, photos.asbDocumentationCrucifixion2,
+      photos.asbDocumentationCrucifixion4, photos.asbDocumentationHand1,
+      photos.asbDocumentationHand2, photos.asbDocumentationKnife1,
+      photos.asbDocumentationKnife2, photos.asbDocumentationMarks1,
+      photos.asbDocumentationMarks2,
+    ]},
+    { label: '2021 - VARIATIONS ON OUR FEET UNDER THE TABLE HAPPEN TO BRUSH AGAINST EACH OTHER', photos: [
+    photos.variationsOnFeet,
+  photos.variationsOnFeet1, photos.variationsOnFeet2,
+    ]},
+    { label: '2019 - Sculptura', photos: [
+    photos.sculptura2, photos.sculptura3, photos.sculptura4,
+  photos.sculptura5, photos.sculptura6, photos.sculptura7,
+  photos.sculptura8,
+    ]},
+    { label: '2019 - FEMME FATALE', photos: [
+    photos.femmeFatale1, photos.femmeFatale2, photos.femmeFatale3,
+    ]},
+  ]
+}
     ])
 
 // Track open windows as an array of objects
@@ -534,34 +561,50 @@ const openWindows = ref([])
 let nextId = 0
 
 function openWindow(item) {
-  const alreadyOpen = openWindows.value.find(w => w.name === item.name)
-  if (alreadyOpen) {
-    alreadyOpen.focused = true
-    return
+        const alreadyOpen = openWindows.value.find(w => w.name === item.name)
+        if (alreadyOpen) {
+          alreadyOpen.focused = true
+          return
+        }
+
+        if (item.type === 'motion') {
+        // Show the GIF overlay first
+        loadingGif.value = item
+        gifDone.value = false
+        return
   }
 
+  pushWindow(item)
+  }
 
-
-openWindows.value.push({
-  photos: item.photos ?? null,
-  type: item.type ?? null,
-  text: item.text ?? null,
-  branches: item.branches ?? null,
-  id: nextId++,
-  name: item.name,
-  image: item.image,
-  content: item.content ?? [],
-  tabs: item.tabs ?? [],
-  activeTab: item.tabs?.[0]?.id ?? null,
-  activeBranch: 0,  // ← which branch button is active
-  activeTab: 0,   
-  branchSelected: false,
-  focused: true,
-  minimized: false,
-  maximized: false,
+  function pushWindow(item) {
+  openWindows.value.push({
+    photos: item.photos ?? null,
+    type: item.type ?? null,
+    text: item.text ?? null,
+    branches: item.branches ?? null,
+    id: nextId++,
+    name: item.name,
+    image: item.image,
+    content: item.content ?? [],
+    tabs: item.tabs ?? [],
+    activeTab: 0,
+    activeBranch: 0,
+    branchSelected: false,
+    focused: true,
+    minimized: false,
+    maximized: false,
     x: window.innerWidth * 0.5 + Math.random() * window.innerWidth * 0.1 - 300,
     y: window.innerHeight * 0.5 + Math.random() * window.innerHeight * 0.1 - 225,
   })
+}
+
+function startGifTimer() {
+  setTimeout(() => {
+    const item = loadingGif.value
+    loadingGif.value = null
+    pushWindow(item)
+  }, SDTE_DURATION)
 }
 
 function closeWindow(id) {
@@ -709,8 +752,10 @@ function startDrag(event, win) {
       
     <!-- bio -->
       <div v-if="win.type === 'bio'" class="window-body bio-body">
-        <p>{{ win.text }}</p>
-      </div> 
+        <div class="sunken-panel" id="bio" >
+          <p>{{ win.text }}</p>  
+        </div>
+    </div> 
 
 <!-- photos -->
 
@@ -738,6 +783,8 @@ function startDrag(event, win) {
 
   </div>
 </div>
+
+
 
     <!-- motion -->
       <div v-else-if="win.type==='motion'" class="window-body">
@@ -797,16 +844,88 @@ function startDrag(event, win) {
       </div>
   
 </div>
-  <footer class="window footer-window">
-    <button @click="toggleMenu">Menu</button>
-  </footer>
+<footer class="window footer-window">
+  <div class="dropdown-wrapper">
+    <button @click="dropdownOpen = !dropdownOpen">Menu</button>
+    <div v-if="dropdownOpen" class="dropdown">
+      <div
+        v-for="item in icons"
+        :key="item.name"
+        class="dropdown-item"
+        @click="openWindow(item); dropdownOpen = false"
+      >
+        <img :src="item.image" :alt="item.name" />
+        <span>{{ item.name }}</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
  
 
 </div>
+
+<div v-if="loadingGif" class="gif-overlay">
+  <img :src="SDTE" @load="startGifTimer" />
+</div>
 </template>
 
 <style scoped>
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: silver;
+  border: 2px solid white;
+  z-index: 200;
+  min-width: 160px;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #4f5070;
+  color: white;
+}
+
+.dropdown-item img {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+}
+
+.gif-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+@keyframes gifWait {
+  from { opacity: 1; }
+  to   { opacity: 1; }
+}
+
+.gif-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 #photoWrapper {
   display: block !important;
@@ -830,12 +949,22 @@ function startDrag(event, win) {
   display: block;
 }
 
-
+#bio {
+  background-color: white;
+  width: 100%!important;
+  height: 100%!important;
+}
 
 .bio-body {
-  font-weight: 400;
+  font-weight: 800;
   margin-top: 50px;
-  padding: 50px;
+  padding: 10px;
+
+}
+
+#bio p {
+  margin: 20px;
+  font-size: 22px;
 }
 
 .openScreen {
@@ -844,6 +973,7 @@ function startDrag(event, win) {
   align-items: center;
   align-content: center;
   height: 100vh;
+  width: 100vw;
   
 }
 
@@ -1063,6 +1193,8 @@ header {
   justify-content: space-between;
   align-items: start;
   width: 100%;
+  overflow: visible;
+
 }
 
 .enter-button {
