@@ -48,7 +48,41 @@ geeseOption2:      `${R2}/geese_taxes_OPTION_2.gif`,
 lysandrePaon:      `${R2}/lysandre_le_paon_impossible.gif`,
 ofranda:           `${R2}/ofranda_shortfilm.gif`,
 theHorrors:        `${R2}/the_horrors_ariel.gif`,
+lysandreCowboy: `${R2}/Lysandre_lecowboyauxmainsdargent.gif`,
   
+}
+
+const vimeoLinks = {
+  [gifs.hubertBunny]:      'https://player.vimeo.com/video/647931268',
+  [gifs.louAdrianne]:      'https://player.vimeo.com/video/647911976',
+  [gifs.claudiaBouvette]:  'https://player.vimeo.com/video/647881451?h=ac0db226e3',
+  [gifs.sophiaBel]:        'https://player.vimeo.com/video/646530040?h=1c5e0f9ee5',
+  [gifs.hubertDimanche]:   'https://player.vimeo.com/video/677325387?h=afd9f8d741',
+  [gifs.hubertULCC]:       'https://player.vimeo.com/video/664040965?h=c86ecbedc5',
+  [gifs.hubertSecret]:     'https://player.vimeo.com/video/664043787?h=974ea5c154',
+  [gifs.apophis]:          'https://player.vimeo.com/video/652753868?h=2d9e4d5245',
+  [gifs.lysandrePaon]:     'https://player.vimeo.com/video/649081198?h=40d08f7f13',
+  [gifs.robertRobert]:     'https://www.youtube.com/embed/u9-mUsCJzR4?si=K-cbyFly5xjE3p',
+  [gifs.claudeMckenzie]:   'https://player.vimeo.com/video/1194778452',
+  [gifs.aoife]:            'https://player.vimeo.com/video/1173831802',
+  [gifs.bibiClubNuit]:     'https://player.vimeo.com/video/1172294613',
+  [gifs.bibiClubParasite]: 'https://player.vimeo.com/video/1172225183',
+  [gifs.bibiClubFemme]:    'https://www.youtube.com/embed/G1axk_fsy70?si=qFBfH_eJgYeT8yLW',
+  [gifs.bibiClubMatin]:    'https://player.vimeo.com/video/1172358541',
+  [gifs.goodbyeKarelle2]:  'https://player.vimeo.com/video/1172357181',
+  [gifs.bibiClubFeu]:      'https://player.vimeo.com/video/1172226775',
+  [gifs.miroirNNao]:       'https://player.vimeo.com/video/1173887166',
+  [gifs.nNaoLive]:         'https://player.vimeo.com/video/1173900591',
+  [gifs.theHorrors]:       'https://player.vimeo.com/video/1174217222',
+  [gifs.geeseOption1]:     'https://player.vimeo.com/video/1174235008',
+  [gifs.bonEnfant]:        'https://player.vimeo.com/video/1159374096',
+  [gifs.lysandre5052HD]:   'https://player.vimeo.com/video/1158672797',
+  [gifs.lysandrePluie]:    'https://www.youtube.com/embed/36AAIvxIzbA?si=79sbNrwhBgLbdKnk',
+  [gifs.poisonResort]:     'https://player.vimeo.com/video/1173829016',
+  [gifs.ofranda]:          'https://player.vimeo.com/video/117236305',
+  [gifs.patrickChurch]:    'https://player.vimeo.com/video/38168973?h=43dde004e9',
+  [gifs.emily]:            'https://player.vimeo.com/video/1172360294',
+  [gifs.lysandreCowboy]: 'https://player.vimeo.com/video/1158679564',
 }
 
 const photos = {
@@ -376,22 +410,31 @@ const icons = ref([
               label: 'DIRECTING & DOP',
               tabs: [
                 { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
-                { label: 'Music Videos ', gifs: [gifs.bibiClubNuit, gifs.bibiClubFemme,gifs.bibiClubMatin, gifs.bibiClubParasite,
-                gifs.bibiClubFeu, gifs.bonEnfant,gifs.claudiaBouvette, gifs.goodbyeKarelle1,gifs.goodbyeKarelle2, 
+                { label: 'Music Videos ', gifs: [gifs.bonEnfant, gifs.goodbyeKarelle1,gifs.goodbyeKarelle2, 
+                gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie, gifs.claudiaBouvette,
+                gifs.sophiaBel, gifs.claudeMckenzie, gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
+                gifs.goodbyeKarelle2,   gifs.bibiClubFeu, gifs.bonEnfant,
                 gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
-                gifs.sophiaBel,
+                
+                
                 ] },
               ]
             },
             {
               label: 'DOP',
               tabs: [
-                { label: 'Music Videos', gifs: [gifs.aoife, gifs.apophis, gifs.claudeMckenzie,
-                gifs.geeseOption1, gifs.geeseOption2, gifs.hubertBunny, gifs.hubertSecret,
-                gifs.hubertULCC, gifs.hubertDimanche, gifs.louAdrianne, gifs.lysandrePaon,
-                gifs.miroirNNao, gifs.nNaoLive, gifs.robertRobert, gifs.theHorrors,
+                { label: 'Music Videos', gifs: [gifs.hubertBunny,gifs.louAdrianne, gifs.claudiaBouvette,
+                gifs.sophiaBel, gifs.hubertDimanche, gifs.hubertULCC, gifs.hubertSecret, gifs.apophis,
+                  gifs.lysandrePaon, gifs.robertRobert, gifs.claudeMckenzie,  gifs.aoife,
+                  gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
+               gifs.goodbyeKarelle2,   gifs.bibiClubFeu,
+                gifs.geeseOption1, gifs.geeseOption2,  gifs.miroirNNao,
+                gifs.nNaoLive, 
+                  gifs.theHorrors, gifs.bonEnfant,
+                  gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
                 ] },
                 { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort] },
+                { label: 'Fashion', gifs: [gifs.ofranda, gifs.poisonResort, gifs.patrickChurch, gifs.emily,] },
               ]
             },
       ]
@@ -571,6 +614,7 @@ function openWindow(item) {
     type: item.type ?? null,
     text: item.text ?? null,
     html: item.html ?? null,
+    vimeoSrc: item.vimeoSrc ?? null,  
     branches: item.branches ?? null,
     id: nextId++,
     name: item.name,
@@ -637,6 +681,37 @@ function startDrag(event, win) {
 
   window.addEventListener('mousemove', onMove)
   window.addEventListener('mouseup', onUp)
+}
+
+function openVimeoFromGif(gifSrc) {
+  const src = vimeoLinks[gifSrc]
+  if (!src) return
+
+  const label = gifSrc.split('/').pop().replace('.gif', '').replace(/%20/g, ' ')
+
+  const alreadyOpen = openWindows.value.find(w => w.vimeoSrc === src)
+  if (alreadyOpen) { alreadyOpen.focused = true; return }
+
+  openWindows.value.push({
+    id: nextId++,
+    name: label,
+    type: 'vimeo',
+    vimeoSrc: src,
+    content: [{ type: 'vimeo', src }],
+    focused: true,
+    minimized: false,
+    maximized: false,
+    branches: null,
+    tabs: [],
+    html: null,
+    photos: null,
+    text: null,
+    branchSelected: false,
+    activeBranch: 0,
+    activeTab: 0,
+    x: window.innerWidth * 0.3 + Math.random() * 200,
+    y: window.innerHeight * 0.15 + Math.random() * 100,
+  })
 }
 
 
@@ -833,6 +908,8 @@ function startDrag(event, win) {
                     v-for="gif in win.branches[win.activeBranch].tabs[win.activeTab].gifs"
                     :key="gif"
                     class="crop"
+                    @click="openVimeoFromGif(gif)"
+                    :style="{ cursor: vimeoLinks[gif] ? 'pointer' : 'default' }"
                   >
                     <img :src="gif" />
                   </div>
@@ -1063,7 +1140,7 @@ header {
   width: 100%;
   border-radius: 10px;
   aspect-ratio: 16/9;
-
+  overflow: hidden;
   object-fit: cover;
   display: block;
 }
