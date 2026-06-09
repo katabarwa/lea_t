@@ -25,14 +25,12 @@ bibiClubFemme:     `${R2}/Bibi%20Club_femme%20lady.gif`,
 bonEnfant:         `${R2}/Bon%20Enfant_minimum.gif`,
 claudiaBouvette:   `${R2}/Claudia%20Bouvette_BBZ.gif`,
 emily:             `${R2}/Emily.gif`,
-goodbyeKarelle1:   `${R2}/Goodbye%20Karelle_Moonroad_OPTION_1.gif`,
 goodbyeKarelle2:   `${R2}/GoodbyeKarelle_MoonRoad_OPTION_2.gif`,
 hubertDimanche:    `${R2}/HUBERT_LENOIR_DIMANCHE%20SOIR.gif`,
 hubertBunny:       `${R2}/Hubert%20Lenoir_Hunny%20Bunny.gif`,
 hubertSecret:      `${R2}/Hubert%20Lenoir_Secret.gif`,
 hubertULCC:        `${R2}/Hubert%20Lenoir_ULCC.gif`,
 louAdrianne:       `${R2}/LOUADRIANNECASSIDY_LAPLUIENETOMBEJAMAISSURTOIy.gif`,
-lysandre5052:      `${R2}/Lysandre_5052..gif`,
 lysandre5052HD:    `${R2}/Lysandre_5052_Master_HD.gif`,
 lysandrePluie:     `${R2}/Lysandre_lodeurdelapluie.gif`,
 miroirNNao:        `${R2}/MIROIR_%20N%20NAO..gif`,
@@ -49,6 +47,8 @@ lysandrePaon:      `${R2}/lysandre_le_paon_impossible.gif`,
 ofranda:           `${R2}/ofranda_shortfilm.gif`,
 theHorrors:        `${R2}/the_horrors_ariel.gif`,
 lysandreCowboy: `${R2}/Lysandre_lecowboyauxmainsdargent.gif`,
+lookingAt: `${R2}/2022_when_i_look_at_myself_looking_at_you.gif`,
+
   
 }
 
@@ -83,6 +83,8 @@ const vimeoLinks = {
   [gifs.patrickChurch]:    'https://player.vimeo.com/video/38168973?h=43dde004e9',
   [gifs.emily]:            'https://player.vimeo.com/video/1172360294',
   [gifs.lysandreCowboy]: 'https://player.vimeo.com/video/1158679564',
+  [gifs.lookingAt]: 'https://player.vimeo.com/video/748914107',
+ 
 }
 
 const photos = {
@@ -117,7 +119,7 @@ asbDocumentationHand2:       `${R2}/ASB_documentation_hand_2.jpg`,
 asbDocumentationKnife1:      `${R2}/ASB_documentation_knife_1.jpg`,
 asbDocumentationKnife2:      `${R2}/ASB_documentation_knife_2.jpg`,
 asbDocumentationMarks1:      `${R2}/ASB_documentation_marks_1.jpg`,
-asbDocumentationMarks2:      `${R2}/ASB_documentatio`,
+asbDocumentationMarks2:      `${R2}/ASB_documentation_knife_2.jpg`,
   btsYseult1:              `${R2}/BTS-photo_Yseult_1.jpg`,
   btsYseult2:              `${R2}/BTS-photo_Yseult_2.jpg`,
   btsYseult3:              `${R2}/BTS-photo_Yseult_3.jpg`,
@@ -343,8 +345,6 @@ vogueItaly1:               `${R2}/Vogue%20Italy_1.jpg`,
 vogueItaly2:               `${R2}/Vogue%20Italy_2.jpg`,
 }
 
-const loadingGif = ref(null)        // which item is queued
-const gifDone = ref(false)
 
 const SDTE_DURATION = 2800   
 
@@ -407,17 +407,19 @@ const icons = ref([
           image: TV,  type: 'motion',
           branches: [
             {
-              label: 'DIRECTING & DOP',
+              label: 'DIRECTING',
               tabs: [
                 { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
-                { label: 'Music Videos ', gifs: [gifs.bonEnfant, gifs.goodbyeKarelle1,gifs.goodbyeKarelle2, 
-                gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie, gifs.claudiaBouvette,
+                { label: 'Music Videos ', gifs: [gifs.bonEnfant, gifs.goodbyeKarelle2, 
+                gifs.lysandre5052HD, gifs.lysandrePluie, gifs.claudiaBouvette,
                 gifs.sophiaBel, gifs.claudeMckenzie, gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
-                gifs.goodbyeKarelle2,   gifs.bibiClubFeu, gifs.bonEnfant,
-                gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
+                  gifs.bibiClubFeu, gifs.bonEnfant,
+                gifs.lysandrePluie,
                 
                 
                 ] },
+
+                { label: 'Short Films', gifs: [gifs.lookingAt]}
               ]
             },
             {
@@ -428,13 +430,13 @@ const icons = ref([
                   gifs.lysandrePaon, gifs.robertRobert, gifs.claudeMckenzie,  gifs.aoife,
                   gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
                gifs.goodbyeKarelle2,   gifs.bibiClubFeu,
-                gifs.geeseOption1, gifs.geeseOption2,  gifs.miroirNNao,
+                gifs.geeseOption1,  gifs.miroirNNao,
                 gifs.nNaoLive, 
                   gifs.theHorrors, gifs.bonEnfant,
-                  gifs.lysandre5052,gifs.lysandre5052HD, gifs.lysandrePluie,
+                  gifs.lysandre5052HD, gifs.lysandrePluie,
                 ] },
-                { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort] },
-                { label: 'Fashion', gifs: [gifs.ofranda, gifs.poisonResort, gifs.patrickChurch, gifs.emily,] },
+                { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort, gifs.lookingAt] },
+                { label: 'Fashion', gifs: [gifs.ofranda, gifs.poisonResort] },
               ]
             },
       ]
@@ -443,12 +445,12 @@ const icons = ref([
         type: 'bio',
         html: `LÉA TAILLEFER IS A MONTRÉAL AND LONDON-BASED MULTIDISCIPLINARY ARTIST, 
         FILMMAKER, CINEMATOGRAPHER AND PHOTOGRAPHER WORKING ACROSS ART, FILM, MUSIC AND FASHION.
-
+<br><br>
 SHE HAS WORKED WITH ARTISTS SUCH AS HUBERT LENOIR, GEESE, ARIANE ROY, LOU-ADRIANE CASSIDY, 
 BON ENFANT, CLAUDIA BOUVETTE AND GAB BOIS, AND HAS COLLABORATED WITH DIRECTORS INCLUDING NOEL PAUL, 
 NOÉMIE D. LECLERC, VJOSANA SHKURTI AND LUCA PISCOPO. HER MUSIC VIDEO CINEMATOGRAPHY HAS BEEN 
 SHORTLISTED AT THE UK MUSIC VIDEO AWARDS AND THE 1.4 AWARDS.
-
+<br><br>
 HER WORK HAS BEEN SHOWN INTERNATIONALLY IN SOLO AND GROUP EXHIBITIONS IN MONTRÉAL, 
 AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a href="https://www.interviewmagazine.com/music/hubert-lenoir-on-mosh-pits-freestyle-skiing-and-his-daring-new-album">INTERVIEW</a>, <a href="https://www.papermag.com/sophia-bel-2am">PAPER</a>,
  PHOTO <a href="https://www.vogue.com/photovogue/photographers/203514">VOGUE ITALIA</a>, <a href="https://ca.rollingstone.com/fr/musique/ariane-roy/">ROLLING STONE</a>,<a href="https://mixmag.net/feature/the-mix-069-dj-fuckoff"> MIXMAG</a>, AND <a href="https://contributormagazine.com/fashion-story-lust-of-the-night/">CONTRIBUTOR MAGAZINE</a>.`
@@ -484,7 +486,7 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
   
 ] },
           { label: 'AlbumCover Art', photos: [ photos.albumCoverArjunaOakes2019, photos.albumCoverDJFuckoff2025, photos.albumCoverPhoebeJames,
-          photos.aime2024, photos.albumCoverArianeRoy, photos.albumCoverReflexiones,
+          photos.albumCoverArianeRoy, photos.albumCoverReflexiones,
           ] },
           { label: 'Editorial', photos: [   photos.aime2024, 
               photos.alexa, 
@@ -526,31 +528,35 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
 
 
           ] },
-          { label: 'Publications', photos: [   photos.newBondStreet1, photos.newBondStreet2, photos.newBondStreet3,
-  photos.newBondStreet4, photos.newBondStreet5, photos.newBondStreet6,
-  photos.newBondStreetPulsemag1, photos.newBondStreetPulsemag2, photos.newBondStreetPulsemag3, photos.bootlegger1, photos.bootlegger2,
-  photos.bootlegger3, photos.bootlegger4, photos.bootlegger5,
-  photos.bootlegger6, photos.bootlegger7, photos.bootlegger8,
-  photos.bootlegger9, photos.bootlegger10, photos.bootlegger11,
-  photos.bootlegger12,
-
-  photos.hubertLenoir_interview0, photos.hubertLenoir_interview1,
-  photos.hubertLenoir_interview2, photos.hubertLenoir_interview3, photos.hubertLenoir_interview4,
-  photos.secretHubert,
-
-  photos.mixmagDJFuckoff1,
-  photos.mixmagDJFuckoff2, photos.mixmagDJFuckoff3, photos.mixmagDJFuckoff4,
-  photos.mixmagDJFuckoff5, 
-
-  photos.postMagCoverMars2020,
-
-
-
-          ] },
+          { label: 'Publications', sections: [
+  { label: '15 New Bond Street — Pulse Mag', photos: [
+    photos.newBondStreet1, photos.newBondStreet2, photos.newBondStreet3,
+    photos.newBondStreet4, photos.newBondStreet5, photos.newBondStreet6,
+    photos.newBondStreetPulsemag1, photos.newBondStreetPulsemag2, photos.newBondStreetPulsemag3,
+  ]},
+  { label: 'Bootlegger Magazine 2024', photos: [
+    photos.bootlegger1, photos.bootlegger2, photos.bootlegger3,
+    photos.bootlegger4, photos.bootlegger5, photos.bootlegger6,
+    photos.bootlegger7, photos.bootlegger8, photos.bootlegger9,
+    photos.bootlegger10, photos.bootlegger11, photos.bootlegger12,
+  ]},
+  { label: 'Hubert Lenoir — Interview Magazine 2021', photos: [
+    photos.hubertLenoir_interview0, photos.hubertLenoir_interview1,
+    photos.hubertLenoir_interview2, photos.hubertLenoir_interview3,
+    photos.hubertLenoir_interview4, photos.secretHubert,
+  ]},
+  { label: 'DJ Fuckoff — Mixmag', photos: [
+    photos.mixmagDJFuckoff1, photos.mixmagDJFuckoff2, photos.mixmagDJFuckoff3,
+    photos.mixmagDJFuckoff4, photos.mixmagDJFuckoff5,
+  ]},
+  { label: 'Post Mag — Mars Issue 2020', photos: [
+    photos.postMagCoverMars2020,
+  ]},
+]},
         ]
        },
        { name: 'ART', 
-  image: ART, type: "photos",
+  image: ART, type: "art",
   tabs: [ 
     { label: '2025 Archive', photos: [
     photos.documentationArchives1, photos.documentationArchives2,
@@ -592,24 +598,29 @@ const openWindows = ref([])
 let nextId = 0
 
 function openWindow(item) {
-        const alreadyOpen = openWindows.value.find(w => w.name === item.name)
-        if (alreadyOpen) {
-          alreadyOpen.focused = true
-          return
-        }
+  const alreadyOpen = openWindows.value.find(w => w.name === item.name)
+  if (alreadyOpen) {
+    alreadyOpen.focused = true
+    return
+  }
 
-        if (item.type === 'motion') {
-        // Show the GIF overlay first
-        loadingGif.value = item
-        gifDone.value = false
-        return
+  if (item.type === 'motion') {
+    item._loading = true
+    pushWindow(item)
+    // find the window we just pushed and start the timer
+    const win = openWindows.value[openWindows.value.length - 1]
+    setTimeout(() => {
+      win.loading = false
+    }, SDTE_DURATION)
+    return
   }
 
   pushWindow(item)
-  }
+}
 
   function pushWindow(item) {
   openWindows.value.push({
+    loading: item._loading ?? false,
     photos: item.photos ?? null,
     type: item.type ?? null,
     text: item.text ?? null,
@@ -632,21 +643,24 @@ function openWindow(item) {
   })
 }
 
-function startGifTimer() {
-  setTimeout(() => {
-    const item = loadingGif.value
-    loadingGif.value = null
-    pushWindow(item)
-  }, SDTE_DURATION)
-}
 
 function closeWindow(id) {
   openWindows.value = openWindows.value.filter(w => w.id !== id)
 }
 function minimizeWindow(id) {
   const win = openWindows.value.find(w => w.id === id)
-  if (win) win.minimized = !win.minimized
-  win.maximized = false 
+  if (win) {
+    win.minimized = true
+    win.maximized = false
+  }
+}
+
+function restoreWindow(id) {
+  const win = openWindows.value.find(w => w.id === id)
+  if (win) {
+    win.minimized = false
+    focusWindow(id)
+  }
 }
 
 function maximizeWindow(id) {
@@ -742,7 +756,8 @@ function openVimeoFromGif(gifSrc) {
 
   </header>
 
-  <div v-if="open" class="window" :class="{ minimized, fullscreen }"  style="width: 350px" >
+  <div v-if="open" class="window" :class="{ minimized, fullscreen }"  style="width: 350px" 
+  >
     <div  >
       <div class="title-bar">
         <div class="title-bar-text">Contact</div>
@@ -753,7 +768,7 @@ function openVimeoFromGif(gifSrc) {
         </div>
       </div>
       <div v-if="!minimized" class="content"><a href="Mailto:americanlean@gmail.com">americanlean@gmail.com</a>
-        <a href="">VIMEO</a>
+        <a href="https://vimeo.com/user104821665">VIMEO</a>
       </div>
     </div>
   </div>
@@ -786,13 +801,13 @@ function openVimeoFromGif(gifSrc) {
       <div class="window" id="menuWindow"
         v-for="win in openWindows"
         :key="win.id"
+        v-show="!win.minimized" 
         :style="{
           position: 'absolute',
           zIndex: win.focused ? 10 : 1,
           ...(win.maximized
             ? { left: '0', top: '44px', width: '100vw', height: '100vh' }
-            : win.minimized
-              ? { left: win.x + 'px', top: win.y + 'px', height: '44px', overflow: 'hidden' }
+            
               : { left: win.x + 'px', top: win.y + 'px' }
           )
         }"
@@ -836,17 +851,31 @@ function openVimeoFromGif(gifSrc) {
       <a>{{ tab.label }}</a>
     </li>
   </menu>
-  <div class="sunken-panel" >
-        <div id="photoWrapper">
-              <div v-for="photo in win.tabs[win.activeTab].photos"
-                :key="photo"
-                class="photoItem"
-              >
-                <img :src= "photo"  class="imgCrop">
-              </div>
-        </div>
 
+  <!-- normal masonry grid -->
+  <div v-if="win.tabs[win.activeTab].photos" class="sunken-panel">
+    <div id="photoWrapper">
+      <div v-for="photo in win.tabs[win.activeTab].photos" :key="photo" class="photoItem">
+        <img :src="photo" class="imgCrop">
+      </div>
+    </div>
   </div>
+
+  <!-- publications: art-style horizontal scroll sections -->
+  <div v-else-if="win.tabs[win.activeTab].sections" class="art-scroll">
+    <div v-for="(section, s) in win.tabs[win.activeTab].sections" :key="s" class="art-section">
+      <div class="art-section-label">{{ section.label }}</div>
+      <div class="art-hscroll">
+        <img
+          v-for="photo in section.photos"
+          :key="photo"
+          :src="photo"
+          class="art-photo"
+        />
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div v-if="win.type === 'vimeo'" class="window-body">
@@ -862,9 +891,35 @@ function openVimeoFromGif(gifSrc) {
   ></iframe>
 </div>
 
+ <!-- art -->
+
+<!-- art: vertical scroll, sections with horizontal photo strips -->
+<div v-if="win.type === 'art'" class="window-body">
+  <div class="art-scroll">
+    <div v-for="(tab, t) in win.tabs" :key="t" class="art-section">
+      <div class="art-section-label">{{ tab.label }}</div>
+      <div class="art-hscroll">
+        <img
+          v-for="photo in tab.photos"
+          :key="photo"
+          :src="photo"
+          class="art-photo"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
     <!-- motion -->
       <div v-else-if="win.type==='motion'" class="window-body">
-            <menu role="tablist" v-if="win.branches">
+
+        <div v-if="win.loading" class="motion-loading">
+              <img :src="SDTE" />
+        </div>
+
+        <template v-else>
+          <menu role="tablist" v-if="win.branches">
                   <li
                     v-for="tab in win.tabs"
                     :key="tab.id"
@@ -883,7 +938,7 @@ function openVimeoFromGif(gifSrc) {
                   <button
                     @click="win.activeBranch = 0; win.activeTab = 0; win.branchSelected = true"
                     :class="{ active: win.activeBranch === 0 }"
-                  >DIRECTING & DOP</button>
+                  >DIRECTING</button>
                   <button
                     @click="win.activeBranch = 1; win.activeTab = 0; win.branchSelected = true"
                     :class="{ active: win.activeBranch === 1 }"
@@ -916,6 +971,8 @@ function openVimeoFromGif(gifSrc) {
                 </div>
 
             </template>
+        </template>
+            
 
 
 
@@ -937,18 +994,98 @@ function openVimeoFromGif(gifSrc) {
       </div>
     </div>
   </div>
+  <div class="dock">
+          <button
+            v-for="win in openWindows.filter(w => w.minimized)"
+            :key="win.id"
+            class="dock-btn"
+            @click="restoreWindow(win.id)"
+          >
+            <img :src="win.image" :alt="win.name" />
+            <span>{{ win.name }}</span>
+          </button>
+    </div>
 </footer>
 
  
 
 </div>
 
-<div v-if="loadingGif" class="gif-overlay">
-  <img :src="SDTE" @load="startGifTimer" />
-</div>
+
 </template>
 
 <style scoped>
+
+.art-scroll {
+  flex: 1;
+  overflow-y: scroll;
+  background-color: silver;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px;
+  min-height: 0;
+}
+
+.art-section-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 2px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.art-hscroll {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  height: 56vh;   /* 70% of the ~80vh window */
+  flex-shrink: 0;
+}
+
+.art-hscroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.art-photo {
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+}
+
+.dock {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+  padding: 0 8px;
+}
+
+.dock-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dock-btn img {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
 
 .dropdown-wrapper {
   position: relative;
@@ -984,14 +1121,20 @@ function openVimeoFromGif(gifSrc) {
   image-rendering: pixelated;
 }
 
-.gif-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
+.motion-loading {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: black;
+  overflow: hidden;
+}
+
+.motion-loading img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0;
 }
 
 @keyframes gifWait {
@@ -999,11 +1142,7 @@ function openVimeoFromGif(gifSrc) {
   to   { opacity: 1; }
 }
 
-.gif-overlay img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
+
 
 #photoWrapper {
   display: block !important;
@@ -1279,6 +1418,7 @@ header {
   right: 0;
   z-index: 100;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: start;
   width: 100%;
