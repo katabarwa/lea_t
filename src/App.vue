@@ -1066,8 +1066,12 @@ function openVimeoFromGif(gifSrc) {
 
 <style scoped>
 .gif-title {
-  padding-left: 10px;
-  padding-top:20px ;
+  padding: 20px 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
 }
 .art-scroll {
   flex: 1;
