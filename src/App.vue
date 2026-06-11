@@ -12,82 +12,88 @@ import SDTE from '/src/assets/sdte.gif'
 // ─── R2 CONFIG — only line you ever need to change ───────────────────────────
 const R2 = 'https://pub-68ca04e89a04442090a6f0cd319f22c4.r2.dev'
 // ─────────────────────────────────────────────────────────────────────────────
-
-
-
 const gifs = {
-  apophis:           `${R2}/Apophis_Onprendradel'avanceplustard.gif`,
-bibiClubFeu:       `${R2}/BIBI_CLUB_FEU.gif`,
-bibiClubNuit:      `${R2}/Bibi%20Clb_La%20Nuit.gif`,
-bibiClubMatin:     `${R2}/Bibi%20Club_Le%20Matin.gif`,
-bibiClubParasite:  `${R2}/Bibi%20Club_Parasite.gif`,
-bibiClubFemme:     `${R2}/Bibi%20Club_femme%20lady.gif`,
-bonEnfant:         `${R2}/Bon%20Enfant_minimum.gif`,
-claudiaBouvette:   `${R2}/Claudia%20Bouvette_BBZ.gif`,
-emily:             `${R2}/Emily.gif`,
-goodbyeKarelle2:   `${R2}/GoodbyeKarelle_MoonRoad_OPTION_2.gif`,
-hubertDimanche:    `${R2}/HUBERT_LENOIR_DIMANCHE%20SOIR.gif`,
-hubertBunny:       `${R2}/Hubert%20Lenoir_Hunny%20Bunny.gif`,
-hubertSecret:      `${R2}/Hubert%20Lenoir_Secret.gif`,
-hubertULCC:        `${R2}/Hubert%20Lenoir_ULCC.gif`,
-louAdrianne:       `${R2}/LOUADRIANNECASSIDY_LAPLUIENETOMBEJAMAISSURTOIy.gif`,
-lysandre5052HD:    `${R2}/Lysandre_5052_Master_HD.gif`,
-lysandrePluie:     `${R2}/Lysandre_lodeurdelapluie.gif`,
-miroirNNao:        `${R2}/MIROIR_%20N%20NAO..gif`,
-nNaoLive:          `${R2}/N%20NAO%20-%20Live%20Session.gif`,
-patrickChurch:     `${R2}/Patrick-Chuch_Beauty-Story.gif`,
-poisonResort:      `${R2}/Poison%20Resort_shortfilm.gif`,
-robertRobert:      `${R2}/Robert%20Robert_L'e%CC%81te%CC%81%20je%20m'ennuie_.gif`,
-sophiaBel:         `${R2}/Sophia%20Bel_2AM.gif`,
-aoife:             `${R2}/aoife_nessa_frances_this_still_life.gif`,
-claudeMckenzie:    `${R2}/claude_mckenzie.gif`,
-geeseOption1:      `${R2}/geese_Taxes_UKVMA_OPTION_1.gif`,
-geeseOption2:      `${R2}/geese_taxes_OPTION_2.gif`,
-lysandrePaon:      `${R2}/lysandre_le_paon_impossible.gif`,
-ofranda:           `${R2}/ofranda_shortfilm.gif`,
-theHorrors:        `${R2}/the_horrors_ariel.gif`,
-lysandreCowboy: `${R2}/Lysandre_lecowboyauxmainsdargent.gif`,
-lookingAt: `${R2}/2022_when_i_look_at_myself_looking_at_you.gif`,
-
-  
+  lys:              { src: `${R2}/2025_Lysandre_lecowboyauxmainsdargent.gif`,              title: `Lysandre — Le cowboy aux mains d'argent`,                credits: 'Directed and cinematography by Léa Taillefer' },
+  apophis:          { src: `${R2}/Apophis_Onprendradel'avanceplustard.gif`,                title: "Apophis — On prendra de l'avance plus tard",            credits: 'Directed by Gabriel Lapointe · Cinematography by Léa Taillefer' },
+  bibiClubFeu:      { src: `${R2}/BIBI_CLUB_FEU.gif`,                                     title: 'Bibi Club — Feu',                                       credits: 'Directed and cinematography by Léa Taillefer' },
+  bibiClubNuit:     { src: `${R2}/Bibi%20Clb_La%20Nuit.gif`,                             title: 'Bibi Club — La Nuit',                                   credits: 'Directed and cinematography by Léa Taillefer' },
+  bibiClubMatin:    { src: `${R2}/Bibi%20Club_Le%20Matin.gif`,                           title: 'Bibi Club — Le Matin',                                  credits: 'Directed and cinematography by Léa Taillefer' },
+  bibiClubParasite: { src: `${R2}/Bibi%20Club_Parasite.gif`,                             title: 'Bibi Club — Parasite',                                  credits: 'Directed and cinematography by Léa Taillefer' },
+  bibiClubFemme:    { src: `${R2}/Bibi%20Club_femme%20lady.gif`,                         title: 'Bibi Club — Femme Lady',                                credits: 'Directed and cinematography by Léa Taillefer' },
+  bonEnfant:        { src: `${R2}/Bon%20Enfant_minimum.gif`,                             title: 'Bon Enfant — Minimum',                                  credits: 'Directed and cinematography by Léa Taillefer' },
+  claudiaBouvette:  { src: `${R2}/Claudia%20Bouvette_BBZ.gif`,                           title: 'Claudia Bouvette — BBZ',                                credits: 'Directed and cinematography by Léa Taillefer' },
+  emily:            { src: `${R2}/Emily.gif`,                                             title: 'Emily',                                                 credits: 'Directed and cinematography by Léa Taillefer' },
+  goodbyeKarelle2:  { src: `${R2}/GoodbyeKarelle_MoonRoad_OPTION_2.gif`,                 title: 'Goodbye Karelle — Moon Road',                           credits: 'Directed by Léa Taillefer & Karelle Tremblay · Cinematography by Léa Taillefer' },
+  hubertDimanche:   { src: `${R2}/HUBERT_LENOIR_DIMANCHE%20SOIR.gif`,                    title: 'Hubert Lenoir — Dimanche Soir',                         credits: 'Directed by Noémie D. Leclerc · Cinematography by Léa Taillefer' },
+  hubertBunny:      { src: `${R2}/Hubert%20Lenoir_Hunny%20Bunny.gif`,                    title: 'Hubert Lenoir — Hunny Bunny',                           credits: 'Directed by Noémie D. Leclerc & Gabriel Lapointe · Cinematography by Léa Taillefer' },
+  hubertSecret:     { src: `${R2}/Hubert%20Lenoir_Secret.gif`,                           title: 'Hubert Lenoir — Secret',                                credits: 'Directed by Noémie D. Leclerc · Cinematography by Léa Taillefer' },
+  hubertULCC:       { src: `${R2}/Hubert%20Lenoir_ULCC.gif`,                             title: 'Hubert Lenoir — ULCC',                                  credits: 'Directed by Noémie D. Leclerc · Cinematography by Léa Taillefer' },
+  louAdrianne:      { src: `${R2}/LOUADRIANNECASSIDY_LAPLUIENETOMBEJAMAISSURTOIy.gif`,   title: 'Lou-Adriane Cassidy — La pluie ne tombe jamais sur toi', credits: 'Directed by Gabriel Lapointe · Cinematography by Léa Taillefer' },
+  lysandre5052HD:   { src: `${R2}/Lysandre_5052_Master_HD.gif`,                          title: 'Lysandre — 5052',                                       credits: 'Directed and cinematography by Léa Taillefer' },
+  lysandrePluie:    { src: `${R2}/Lysandre_lodeurdelapluie.gif`,                         title: "Lysandre — L'odeur de la pluie",                        credits: 'Directed and cinematography by Léa Taillefer' },
+  miroirNNao:       { src: `${R2}/MIROIR_%20N%20NAO..gif`,                               title: 'N NAO — Miroir',                                        credits: 'Directed by Naomie de Lorimier · Cinematography by Léa Taillefer' },
+  nNaoLive:         { src: `${R2}/N%20NAO%20-%20Live%20Session.gif`,                     title: 'N NAO — Live Session',                                  credits: 'Directed by Naomie de Lorimier · Cinematography by Léa Taillefer' },
+  patrickChurch:    { src: `${R2}/Patrick-Chuch_Beauty-Story.gif`,                       title: 'Patrick Church — Beauty Story',                         credits: 'Directed and cinematography by Léa Taillefer · Starring Patrick Church · Make-up by Lochie Stonehouse' },
+  poisonResort:     { src: `${R2}/Poison%20Resort_shortfilm.gif`,                        title: 'Poison Resort',                                         credits: 'Directed by Luca Piscopo · Cinematography by Léa Taillefer' },
+  robertRobert:     { src: `${R2}/Robert%20Robert_L'e%CC%81te%CC%81%20je%20m'ennuie_.gif`, title: "Robert Robert — L'été je m'ennuie",                   credits: 'Directed by Noémie D. Leclerc · Cinematography by Léa Taillefer' },
+  sophiaBel:        { src: `${R2}/Sophia%20Bel_2AM.gif`,                                title: 'Sophia Bel — 2AM',                                      credits: 'Directed and cinematography by Léa Taillefer' },
+  aoife:            { src: `${R2}/aoife_nessa_frances_this_still_life.gif`,              title: 'Aoife Nessa Frances — This Still Life',                 credits: 'Directed by Ella Margolin · Cinematography by Léa Taillefer' },
+  claudeMckenzie:   { src: `${R2}/claude_mckenzie.gif`,                                  title: 'Claude McKenzie',                                       credits: 'Directed and cinematography by Léa Taillefer · Creative direction by Juste du Feu' },
+  geeseOption1:     { src: `${R2}/geese_Taxes_UKVMA_OPTION_1.gif`,                      title: 'Geese — Taxes',                                         credits: 'Directed by Noel Paul · Cinematography by Léa Taillefer' },
+  geeseOption2:     { src: `${R2}/geese_taxes_OPTION_2.gif`,                            title: 'Geese — Taxes (Option 2)',                              credits: 'Directed by Noel Paul · Cinematography by Léa Taillefer' },
+  lysandrePaon:     { src: `${R2}/lysandre_le_paon_impossible.gif`,                     title: 'Lysandre — Le paon impossible',                         credits: 'Directed by Gabriel Lapointe · Cinematography by Léa Taillefer' },
+  ofranda:          { src: `${R2}/ofranda_shortfilm.gif`,                                title: 'Ofranda',                                               credits: 'Directed by Vjosana Skurti · Cinematography by Léa Taillefer · Produced by Périphéria' },
+  theHorrors:       { src: `${R2}/the_horrors_ariel.gif`,                                title: 'The Horrors — Ariel',                                   credits: 'Directed by Sarah Pantadosi · Additional cinematography by Léa Taillefer' },
+  lysandreCowboy:   { src: `${R2}/Lysandre_lecowboyauxmainsdargent.gif`,                title: `Lysandre — Le cowboy aux mains d'argent`,               credits: 'Directed and cinematography by Léa Taillefer' },
+  lookingAt:        { src: `${R2}/2022_when_i_look_at_myself_looking_at_you.gif`,        title: 'When I Look at Myself Looking at You',                  credits: 'Directed and cinematography by Léa Taillefer' },
 }
 
 const vimeoLinks = {
-  [gifs.hubertBunny]:      'https://player.vimeo.com/video/647931268',
-  [gifs.louAdrianne]:      'https://player.vimeo.com/video/647911976',
-  [gifs.claudiaBouvette]:  'https://player.vimeo.com/video/647881451?h=ac0db226e3',
-  [gifs.sophiaBel]:        'https://player.vimeo.com/video/646530040?h=1c5e0f9ee5',
-  [gifs.hubertDimanche]:   'https://player.vimeo.com/video/677325387?h=afd9f8d741',
-  [gifs.hubertULCC]:       'https://player.vimeo.com/video/664040965?h=c86ecbedc5',
-  [gifs.hubertSecret]:     'https://player.vimeo.com/video/664043787?h=974ea5c154',
-  [gifs.apophis]:          'https://player.vimeo.com/video/652753868?h=2d9e4d5245',
-  [gifs.lysandrePaon]:     'https://player.vimeo.com/video/649081198?h=40d08f7f13',
-  [gifs.robertRobert]:     'https://www.youtube.com/embed/u9-mUsCJzR4?si=K-cbyFly5xjE3p',
-  [gifs.claudeMckenzie]:   'https://player.vimeo.com/video/1194778452',
-  [gifs.aoife]:            'https://player.vimeo.com/video/1173831802',
-  [gifs.bibiClubNuit]:     'https://player.vimeo.com/video/1172294613',
-  [gifs.bibiClubParasite]: 'https://player.vimeo.com/video/1172225183',
-  [gifs.bibiClubFemme]:    'https://www.youtube.com/embed/G1axk_fsy70?si=qFBfH_eJgYeT8yLW',
-  [gifs.bibiClubMatin]:    'https://player.vimeo.com/video/1172358541',
-  [gifs.goodbyeKarelle2]:  'https://player.vimeo.com/video/1172357181',
-  [gifs.bibiClubFeu]:      'https://player.vimeo.com/video/1172226775',
-  [gifs.miroirNNao]:       'https://player.vimeo.com/video/1173887166',
-  [gifs.nNaoLive]:         'https://player.vimeo.com/video/1173900591',
-  [gifs.theHorrors]:       'https://player.vimeo.com/video/1174217222',
-  [gifs.geeseOption1]:     'https://player.vimeo.com/video/1174235008',
-  [gifs.bonEnfant]:        'https://player.vimeo.com/video/1159374096',
-  [gifs.lysandre5052HD]:   'https://player.vimeo.com/video/1158672797',
-  [gifs.lysandrePluie]:    'https://www.youtube.com/embed/36AAIvxIzbA?si=79sbNrwhBgLbdKnk',
-  [gifs.poisonResort]:     'https://player.vimeo.com/video/1173829016',
-  [gifs.ofranda]:          'https://player.vimeo.com/video/117236305',
-  [gifs.patrickChurch]:    'https://player.vimeo.com/video/38168973?h=43dde004e9',
-  [gifs.emily]:            'https://player.vimeo.com/video/1172360294',
-  [gifs.lysandreCowboy]: 'https://player.vimeo.com/video/1158679564',
-  [gifs.lookingAt]: 'https://player.vimeo.com/video/748914107',
+  [gifs.lys.src]:      'https://player.vimeo.com/video/1158679564',  
+  [gifs.hubertBunny.src]:      'https://player.vimeo.com/video/647931268',
+  [gifs.louAdrianne.src]:      'https://player.vimeo.com/video/647911976',
+  [gifs.claudiaBouvette.src]:  'https://player.vimeo.com/video/647881451?h=ac0db226e3',
+  [gifs.sophiaBel.src]:        'https://player.vimeo.com/video/646530040?h=1c5e0f9ee5',
+  [gifs.hubertDimanche.src]:   'https://player.vimeo.com/video/677325387?h=afd9f8d741',
+  [gifs.hubertULCC.src]:       'https://player.vimeo.com/video/664040965?h=c86ecbedc5',
+  [gifs.hubertSecret.src]:     'https://player.vimeo.com/video/664043787?h=974ea5c154',
+  [gifs.apophis.src]:          'https://player.vimeo.com/video/652753868?h=2d9e4d5245',
+  [gifs.lysandrePaon.src]:     'https://player.vimeo.com/video/649081198?h=40d08f7f13',
+  [gifs.robertRobert.src]:     'https://www.youtube.com/embed/u9-mUsCJzR4?si=K-cbyFly5xjE3p',
+  [gifs.claudeMckenzie.src]:   'https://player.vimeo.com/video/1194778452',
+  [gifs.aoife.src]:            'https://player.vimeo.com/video/1173831802',
+  [gifs.bibiClubNuit.src]:     'https://player.vimeo.com/video/1172294613',
+  [gifs.bibiClubParasite.src]: 'https://player.vimeo.com/video/1172225183',
+  [gifs.bibiClubFemme.src]:    'https://www.youtube.com/embed/G1axk_fsy70?si=qFBfH_eJgYeT8yLW',
+  [gifs.bibiClubMatin.src]:    'https://player.vimeo.com/video/1172358541',
+  [gifs.goodbyeKarelle2.src]:  'https://player.vimeo.com/video/1172357181',
+  [gifs.bibiClubFeu.src]:      'https://player.vimeo.com/video/1172226775',
+  [gifs.miroirNNao.src]:       'https://player.vimeo.com/video/1173887166',
+  [gifs.nNaoLive.src]:         'https://player.vimeo.com/video/1173900591',
+  [gifs.theHorrors.src]:       'https://player.vimeo.com/video/1174217222',
+  [gifs.geeseOption1.src]:     'https://player.vimeo.com/video/1174235008',
+  [gifs.bonEnfant.src]:        'https://player.vimeo.com/video/1159374096',
+  [gifs.lysandre5052HD.src]:   'https://player.vimeo.com/video/1158672797',
+  [gifs.lysandrePluie.src]:    'https://www.youtube.com/embed/36AAIvxIzbA?si=79sbNrwhBgLbdKnk',
+  [gifs.poisonResort.src]:     'https://player.vimeo.com/video/1173829016',
+  [gifs.ofranda.src]:          'https://player.vimeo.com/video/117236305',
+  [gifs.patrickChurch.src]:    'https://player.vimeo.com/video/381368973?',
+  [gifs.emily.src]:            'https://player.vimeo.com/video/1172360294',
+  [gifs.lysandreCowboy.src]: 'https://player.vimeo.com/video/1158679564',
+  [gifs.lookingAt.src]: 'https://player.vimeo.com/video/748914107',
  
 }
 
 const photos = {
+  louisMar: `${R2}/louisMar+01+2019+7+black+border+.jpg`,
+  oli: `${R2}/oliviamainet sac.jpg`,
+  bad: `${R2}/Bad%to%the%bone%-%bestiole%-%2021.png`,
+  archives1: `${R2}/Archives_l'imagier_1.jpg`,
+  archives2: `${R2}/Archives_l'imagier_2.jpg`,
+  archives3: `${R2}/Archives_l'imagier_3.jpg`,
+  archives4: `${R2}/Archives_l'imagier_4.jpg`,
+  archives5: `${R2}/Archives_l'imagier_5.jpg`,
+  archives6: `${R2}/Archives_l'imagier_6.jpg`,
   newBondStreet1: `${R2}/15%20new%20bond%20street_editorial_pulsemag_1.jpg`,
   newBondStreet2: `${R2}/15%20new%20bond%20street_editorial_pulsemag_2.jpg`,
   newBondStreet3: `${R2}/15%20new%20bond%20street_editorial_pulsemag_3.jpg`,
@@ -343,6 +349,9 @@ vestibule2023_2:           `${R2}/Vestibule_2023_2.jpg`,
 vogueItaly:                `${R2}/Vogue%20Italy.jpg`,
 vogueItaly1:               `${R2}/Vogue%20Italy_1.jpg`,
 vogueItaly2:               `${R2}/Vogue%20Italy_2.jpg`,
+syn: `${R2}/Synchron%magazine%together.jpg`,
+contri1: `${R2}/ContributorMagazine_Lust_of_the_night_1.png`,
+contri2: `${R2}/ContributorMagazine_Lust_of_the_night_2.png`,
 }
 
 
@@ -409,34 +418,38 @@ const icons = ref([
             {
               label: 'DIRECTING',
               tabs: [
-                { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
-                { label: 'Music Videos ', gifs: [gifs.bonEnfant, gifs.goodbyeKarelle2, 
-                gifs.lysandre5052HD, gifs.lysandrePluie, gifs.claudiaBouvette,
-                gifs.sophiaBel, gifs.claudeMckenzie, gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
-                  gifs.bibiClubFeu, gifs.bonEnfant,
-                gifs.lysandrePluie,
-                
-                
+             
+                { label: 'Music Videos ', gifs: [   gifs.lysandrePluie, gifs.lysandre5052HD, gifs.lys,
+                 gifs.bonEnfant, gifs.bibiClubFeu, gifs.goodbyeKarelle2, 
+                 gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
+                gifs.sophiaBel,  gifs.claudiaBouvette,
                 ] },
 
-                { label: 'Short Films', gifs: [gifs.lookingAt]}
+                { label: 'Short Films', gifs: [gifs.lookingAt]},
+                { label: 'Fashion', gifs: [gifs.patrickChurch, gifs.emily, ] }
               ]
             },
             {
               label: 'DOP',
               tabs: [
-                { label: 'Music Videos', gifs: [gifs.hubertBunny,gifs.louAdrianne, gifs.claudiaBouvette,
-                gifs.sophiaBel, gifs.hubertDimanche, gifs.hubertULCC, gifs.hubertSecret, gifs.apophis,
-                  gifs.lysandrePaon, gifs.robertRobert, gifs.claudeMckenzie,  gifs.aoife,
-                  gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
-               gifs.goodbyeKarelle2,   gifs.bibiClubFeu,
-                gifs.geeseOption1,  gifs.miroirNNao,
-                gifs.nNaoLive, 
-                  gifs.theHorrors, gifs.bonEnfant,
-                  gifs.lysandre5052HD, gifs.lysandrePluie,
+                { label: 'Music Videos', gifs: [gifs.lysandrePluie,gifs.lysandre5052HD, gifs.lys,
+                gifs.bonEnfant, gifs.geeseOption1, gifs.theHorrors,  gifs.nNaoLive, 
+                gifs.miroirNNao,  gifs.bibiClubFeu,   gifs.goodbyeKarelle2,  
+                gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
+                gifs.aoife, gifs.claudeMckenzie, gifs.robertRobert,  gifs.lysandrePaon, 
+                gifs.apophis, gifs.hubertULCC, gifs.hubertSecret,  gifs.hubertDimanche, 
+                gifs.claudiaBouvette,gifs.louAdrianne, 
+                
+                  
+                 gifs.hubertBunny,
+                  
+             
+               
+                   
+                  
                 ] },
-                { label: 'Short films', gifs: [gifs.ofranda, gifs.poisonResort, gifs.lookingAt] },
-                { label: 'Fashion', gifs: [gifs.ofranda, gifs.poisonResort] },
+                { label: 'Short films', gifs: [gifs.lookingAt, gifs.poisonResort, gifs.ofranda, ] },
+                { label: 'Fashion', gifs: [gifs.emily, gifs.patrickChurch] },
               ]
             },
       ]
@@ -486,7 +499,7 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
   
 ] },
           { label: 'AlbumCover Art', photos: [ photos.albumCoverArjunaOakes2019, photos.albumCoverDJFuckoff2025, photos.albumCoverPhoebeJames,
-          photos.albumCoverArianeRoy, photos.albumCoverReflexiones,
+          photos.albumCoverArianeRoy, photos.albumCoverReflexiones, photos.singleCoverStoylov,
           ] },
           { label: 'Editorial', photos: [   photos.aime2024, 
               photos.alexa, 
@@ -501,15 +514,14 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
   photos.dreony2020_1, photos.dreony2020_2,
   photos.hunnyBunny2019, photos.kanePortraits26, photos.imageAssetCopy,
   photos.kane2019, 
-  photos.louis2018, photos.louis2019,
+  photos.louis2018, photos.louis2019, photos.louisMar,
   photos.lucaPiscopo2022, photos.luca2022, photos.melissaVanDerAuf, 
   photos.mincaColombia2017, photos.october2019, photos.october2019_2,
-  photos.oliviaBrethault1, photos.oliviaBrethault2, photos.oliviaBrethault3,
-  photos.oliviaBrethault4, photos.oliviaBrethault5, photos.oliviaBrethault6,
-  photos.oliviaBrethault7, photos.outtakeCommissionLivre, photos.secretArnaud, photos.secretCarole,
+   photos.oliviaBrethault3,
+  photos.oliviaBrethault4, 
+  photos.oliviaBrethault7, photos.oli, photos.outtakeCommissionLivre, photos.secretArnaud, photos.secretCarole,
   photos.secretNoemie, photos.stephenMarr2019, photos.stephenMarr2019_2, photos.thailand2018, 
-  photos.vestibule2023_2, photos.vogueItaly, photos.vogueItaly1,
-  photos.vogueItaly2,
+photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  photos.secretHubert,
               
           ] },
           { label: 'Landscapes', photos: [  photos.aotearoa2023,
@@ -529,28 +541,51 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
 
           ] },
           { label: 'Publications', sections: [
-  { label: '15 New Bond Street — Pulse Mag', photos: [
+  { label: 'Interview Magazine - Hubert Lenoir', photos: [
+    photos.hubertLenoir_interview0,
+    photos.hubertLenoir_interview2, photos.hubertLenoir_interview3,
+    photos.hubertLenoir_interview4,
+  ]},
+  { label: 'Vogue Italy', photos: [
+  photos.vogueItaly, photos.vogueItaly1,
+  photos.vogueItaly2,
+  ]},
+  { label: 'Mixmag - DJ Fuckoff', photos: [
+    photos.mixmagDJFuckoff1, photos.mixmagDJFuckoff2, photos.mixmagDJFuckoff3,
+    photos.mixmagDJFuckoff4, photos.mixmagDJFuckoff5,
+  ]},
+  { label: 'Pulse Mag - 15 New Bond Street', photos: [
     photos.newBondStreet1, photos.newBondStreet2, photos.newBondStreet3,
     photos.newBondStreet4, photos.newBondStreet5, photos.newBondStreet6,
-    photos.newBondStreetPulsemag1, photos.newBondStreetPulsemag2, photos.newBondStreetPulsemag3,
+    photos.newBondStreetPulsemag1, photos.newBondStreetPulsemag2, photos.newBondStreetPulsemag3, 
+     
   ]},
-  { label: 'Bootlegger Magazine 2024', photos: [
+  { label: 'Bootlegger - Editorial', photos: [
     photos.bootlegger1, photos.bootlegger2, photos.bootlegger3,
     photos.bootlegger4, photos.bootlegger5, photos.bootlegger6,
     photos.bootlegger7, photos.bootlegger8, photos.bootlegger9,
     photos.bootlegger10, photos.bootlegger11, photos.bootlegger12,
   ]},
-  { label: 'Hubert Lenoir — Interview Magazine 2021', photos: [
-    photos.hubertLenoir_interview0, photos.hubertLenoir_interview1,
-    photos.hubertLenoir_interview2, photos.hubertLenoir_interview3,
-    photos.hubertLenoir_interview4, photos.secretHubert,
+
+  { label: 'Synchron Magazine', photos: [
+    photos.syn,
   ]},
-  { label: 'DJ Fuckoff — Mixmag', photos: [
-    photos.mixmagDJFuckoff1, photos.mixmagDJFuckoff2, photos.mixmagDJFuckoff3,
-    photos.mixmagDJFuckoff4, photos.mixmagDJFuckoff5,
-  ]},
-  { label: 'Post Mag — Mars Issue 2020', photos: [
+
+
+  
+
+  { label: 'VARIATIONS ON OUR FEET UNDER THE TABLE HAPPEN TO BRUSH AGAINST EACH OTHER', photos: [
+    photos.variationsOnFeet,
+  photos.variationsOnFeet1, photos.variationsOnFeet2,
+    ]},
+  { label: 'Post Mag', photos: [
     photos.postMagCoverMars2020,
+  ]},
+  { label: 'Contributor Magazine - Lust of the Night', photos: [
+    photos.contri1, photos.contri2,
+  ]},
+  { label: 'Bad to the Bone - Bestiole', photos: [
+    photos.bad, photos.oliviaBrethault1, photos.oliviaBrethault2, photos.oliviaBrethault5, photos.oliviaBrethault6,
   ]},
 ]},
         ]
@@ -558,7 +593,8 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
        { name: 'ART', 
   image: ART, type: "art",
   tabs: [ 
-    { label: '2025 Archive', photos: [
+    { label: '2025 Archive', photos: [photos.archives1, photos.archives2, photos.archives3,
+    photos.archives4, photos.archives5, photos.archives6,
     photos.documentationArchives1, photos.documentationArchives2,
   photos.documentationArchives3, photos.documentationArchives4, photos.documentationArchives5,
   photos.documentationArchives6, photos.documentationArchives7, photos.documentationArchives8,
@@ -573,16 +609,21 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
       photos.asbDocumentationKnife2, photos.asbDocumentationMarks1,
       photos.asbDocumentationMarks2,
     ]},
-    { label: '2021 - VARIATIONS ON OUR FEET UNDER THE TABLE HAPPEN TO BRUSH AGAINST EACH OTHER', photos: [
-    photos.variationsOnFeet,
-  photos.variationsOnFeet1, photos.variationsOnFeet2,
+    { label: '2019 - Strenght', photos: [
+    photos.strength2019,
     ]},
+
     { label: '2019 - Sculptura', photos: [
-    photos.sculptura2, photos.sculptura3, photos.sculptura4,
+    photos.sculptura1, photos.sculptura2, photos.sculptura3, photos.sculptura4,
   photos.sculptura5, photos.sculptura6, photos.sculptura7,
   photos.sculptura8,
     ]},
-    { label: '2019 - FEMME FATALE', photos: [
+    { label: '2019 -  Put a Shirt On', photos: [
+    photos.putAShirtOn, photos.putAShirtOn2, photos.putAShirtOn3, , photos.putAShirtOn5
+    , photos.putAShirtOn6, photos.putAShirtOn7, photos.putAShirtOn8 , photos.putAShirtOn9
+    , photos.putAShirtOn10, photos.putAShirtOn11, photos.putAShirtOnFlyer, photos.putAShirtOnDocumentation,
+    ]},
+    { label: '2019 - Femme Fatale', photos: [
     photos.femmeFatale1, photos.femmeFatale2, photos.femmeFatale3,
     ]},
   ]
@@ -701,7 +742,9 @@ function openVimeoFromGif(gifSrc) {
   const src = vimeoLinks[gifSrc]
   if (!src) return
 
-  const label = gifSrc.split('/').pop().replace('.gif', '').replace(/%20/g, ' ')
+ 
+  const gifEntry = Object.values(gifs).find(g => g.src === gifSrc)
+  const label = gifEntry?.credits ?? gifEntry?.title ?? gifSrc.split('/').pop().replace('.gif', '').replace(/%20/g, ' ')
 
   const alreadyOpen = openWindows.value.find(w => w.vimeoSrc === src)
   if (alreadyOpen) { alreadyOpen.focused = true; return }
@@ -769,6 +812,8 @@ function openVimeoFromGif(gifSrc) {
       </div>
       <div v-if="!minimized" class="content"><a href="Mailto:americanlean@gmail.com">americanlean@gmail.com</a>
         <a href="https://vimeo.com/user104821665">VIMEO</a>
+        <a href="Mailto:americanlean@gmail.com"><p style='color:black'> CV upon request</p></a>
+        
       </div>
     </div>
   </div>
@@ -889,6 +934,10 @@ function openVimeoFromGif(gifSrc) {
     allow="autoplay; fullscreen; picture-in-picture"
     allowfullscreen
   ></iframe>
+  <div class="vimeo-credits">
+    <span class="vimeo-title">{{ win.name }}</span>
+    <span v-if="win.credits">{{ win.credits }}</span>
+  </div>
 </div>
 
  <!-- art -->
@@ -961,12 +1010,13 @@ function openVimeoFromGif(gifSrc) {
                 <div class="sunken-panel" :style="{ display: win.branchSelected ? 'flex' : 'none' }">
                   <div
                     v-for="gif in win.branches[win.activeBranch].tabs[win.activeTab].gifs"
-                    :key="gif"
+                    :key="gif.src"
                     class="crop"
-                    @click="openVimeoFromGif(gif)"
-                    :style="{ cursor: vimeoLinks[gif] ? 'pointer' : 'default' }"
+                    @click="openVimeoFromGif(gif.src)"
+                    :style="{ cursor: vimeoLinks[gif.src] ? 'pointer' : 'default' }"
                   >
-                    <img :src="gif" />
+                    <div class="gif-title">{{ gif.title }}</div>
+                    <img :src="gif.src" />
                   </div>
                 </div>
 
@@ -1015,7 +1065,10 @@ function openVimeoFromGif(gifSrc) {
 </template>
 
 <style scoped>
-
+.gif-title {
+  padding-left: 10px;
+  padding-top:20px ;
+}
 .art-scroll {
   flex: 1;
   overflow-y: scroll;
@@ -1174,6 +1227,7 @@ function openVimeoFromGif(gifSrc) {
   background-color: white;
   width: 100%!important;
   height: 100%!important;
+  font-family: 'MyFont';
 }
 
 .bio-body {
