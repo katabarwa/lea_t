@@ -38,7 +38,7 @@ const gifs = {
   robertRobert:     { src: `${R2}/Robert%20Robert_L'e%CC%81te%CC%81%20je%20m'ennuie_.gif`, title: "Robert Robert — L'été je m'ennuie",                   credits: 'Directed by Noémie D. Leclerc · Cinematography by Léa Taillefer' },
   sophiaBel:        { src: `${R2}/Sophia%20Bel_2AM.gif`,                                title: 'Sophia Bel — 2AM',                                      credits: 'Directed and cinematography by Léa Taillefer' },
   aoife:            { src: `${R2}/aoife_nessa_frances_this_still_life.gif`,              title: 'Aoife Nessa Frances — This Still Life',                 credits: 'Directed by Ella Margolin · Cinematography by Léa Taillefer' },
-  claudeMckenzie:   { src: `${R2}/claude_mckenzie.gif`,                                  title: 'Claude McKenzie',                                       credits: 'Directed and cinematography by Léa Taillefer · Creative direction by Juste du Feu' },
+  claudeMckenzie:   { src: `${R2}/claude_mckenzie.gif`,                                  title: 'Claude McKenzie — Iapit Nutepanu Tshekuan',                                       credits: 'Directed and cinematography by Léa Taillefer · Creative direction by Juste du Feu' },
   geeseOption1:     { src: `${R2}/geese_Taxes_UKVMA_OPTION_1.gif`,                      title: 'Geese — Taxes',                                         credits: 'Directed by Noel Paul · Cinematography by Léa Taillefer' },
   geeseOption2:     { src: `${R2}/geese_taxes_OPTION_2.gif`,                            title: 'Geese — Taxes (Option 2)',                              credits: 'Directed by Noel Paul · Cinematography by Léa Taillefer' },
   lysandrePaon:     { src: `${R2}/lysandre_le_paon_impossible.gif`,                     title: 'Lysandre — Le paon impossible',                         credits: 'Directed by Gabriel Lapointe · Cinematography by Léa Taillefer' },
@@ -85,9 +85,11 @@ const vimeoLinks = {
 }
 
 const photos = {
+
+  LT: `${R2}/LT_dossier_visuel_ASB_documentation_overall_2.jpg`,
   louisMar: `${R2}/louisMar+01+2019+7+black+border+.jpg`,
   oli: `${R2}/oliviamainet sac.jpg`,
-  bad: `${R2}/Bad%to%the%bone%-%bestiole%-%2021.png`,
+  bad: `${R2}/Badtothebone2021.png`,
   archives1: `${R2}/Archives_l'imagier_1.jpg`,
   archives2: `${R2}/Archives_l'imagier_2.jpg`,
   archives3: `${R2}/Archives_l'imagier_3.jpg`,
@@ -433,10 +435,10 @@ const icons = ref([
               label: 'DOP',
               tabs: [
                 { label: 'Music Videos', gifs: [gifs.lysandrePluie,gifs.lysandre5052HD, gifs.lys,
-                gifs.bonEnfant, gifs.geeseOption1, gifs.theHorrors,  gifs.nNaoLive, 
+                gifs.geeseOption1, gifs.bonEnfant,  gifs.theHorrors,  gifs.nNaoLive, 
                 gifs.miroirNNao,  gifs.bibiClubFeu,   gifs.goodbyeKarelle2,  
                 gifs.bibiClubNuit, gifs.bibiClubParasite, gifs.bibiClubFemme,gifs.bibiClubMatin, 
-                gifs.aoife, gifs.claudeMckenzie, gifs.robertRobert,  gifs.lysandrePaon, 
+                gifs.aoife,gifs.sophiaBel, gifs.claudeMckenzie, gifs.robertRobert,  gifs.lysandrePaon, 
                 gifs.apophis, gifs.hubertULCC, gifs.hubertSecret,  gifs.hubertDimanche, 
                 gifs.claudiaBouvette,gifs.louAdrianne, 
                 
@@ -516,7 +518,7 @@ AUCKLAND, NEW YORK AND GATINEAU, AND HAS APPEARED ACROSS PUBLICATIONS SUCH AS <a
   photos.kane2019, 
   photos.louis2018, photos.louis2019, photos.louisMar,
   photos.lucaPiscopo2022, photos.luca2022, photos.melissaVanDerAuf, 
-  photos.mincaColombia2017, photos.october2019, photos.october2019_2,
+   photos.october2019, photos.october2019_2,
    photos.oliviaBrethault3,
   photos.oliviaBrethault4, 
   photos.oliviaBrethault7, photos.oli, photos.outtakeCommissionLivre, photos.secretArnaud, photos.secretCarole,
@@ -567,8 +569,8 @@ photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  pho
     photos.bootlegger10, photos.bootlegger11, photos.bootlegger12,
   ]},
 
-  { label: 'Synchron Magazine', photos: [
-    photos.syn,
+  { label: 'Synchron Magazine — Artist Statement ™', photos: [
+    photos.synchronMagazine, 
   ]},
 
 
@@ -593,23 +595,23 @@ photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  pho
        { name: 'ART', 
   image: ART, type: "art",
   tabs: [ 
-    { label: '2025 Archive', photos: [photos.archives1, photos.archives2, photos.archives3,
+    { label: `Archive - Group exhibition - L'imagier - Gatineau`, photos: [photos.archives1, photos.archives2, photos.archives3,
     photos.archives4, photos.archives5, photos.archives6,
     photos.documentationArchives1, photos.documentationArchives2,
   photos.documentationArchives3, photos.documentationArchives4, photos.documentationArchives5,
   photos.documentationArchives6, photos.documentationArchives7, photos.documentationArchives8,
   photos.documentationArchives9,
     ]},
-    { label: '2024 - A Sacrificed Body (ASB)', photos: [
+    { label: `A Sacrificed Body - Solo exhibition - Montréal`, photos: [
       photos.asbDocumentationW1, photos.asbDocumentationAtalleph2,
       photos.asbDocumentationAtalleph3, photos.asbDocumentationAtalleph4,
       photos.asbDocumentationCrucifixion1, photos.asbDocumentationCrucifixion2,
       photos.asbDocumentationCrucifixion4, photos.asbDocumentationHand1,
       photos.asbDocumentationHand2, photos.asbDocumentationKnife1,
       photos.asbDocumentationKnife2, photos.asbDocumentationMarks1,
-      photos.asbDocumentationMarks2,
+      photos.asbDocumentationMarks2, photos.LT
     ]},
-    { label: '2019 - Strenght', photos: [
+    { label: `Strength - Group exhibition - Good Exposure - Auckland`, photos: [
     photos.strength2019,
     ]},
 
@@ -618,12 +620,12 @@ photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  pho
   photos.sculptura5, photos.sculptura6, photos.sculptura7,
   photos.sculptura8,
     ]},
-    { label: '2019 -  Put a Shirt On', photos: [
+    { label: `Put A Shirt On - Solo exhibition - Satchi&Satchi&Satchi - Auckland`, photos: [
     photos.putAShirtOn, photos.putAShirtOn2, photos.putAShirtOn3, , photos.putAShirtOn5
     , photos.putAShirtOn6, photos.putAShirtOn7, photos.putAShirtOn8 , photos.putAShirtOn9
     , photos.putAShirtOn10, photos.putAShirtOn11, photos.putAShirtOnFlyer, photos.putAShirtOnDocumentation,
     ]},
-    { label: '2019 - Femme Fatale', photos: [
+    { label: 'Femme Fatale', photos: [
     photos.femmeFatale1, photos.femmeFatale2, photos.femmeFatale3,
     ]},
   ]
@@ -744,13 +746,14 @@ function openVimeoFromGif(gifSrc) {
 
  
   const gifEntry = Object.values(gifs).find(g => g.src === gifSrc)
-  const label = gifEntry?.credits ?? gifEntry?.title ?? gifSrc.split('/').pop().replace('.gif', '').replace(/%20/g, ' ')
+  const label = gifEntry?.title ?? gifSrc.split('/').pop().replace('.gif', '').replace(/%20/g, ' ')
 
   const alreadyOpen = openWindows.value.find(w => w.vimeoSrc === src)
   if (alreadyOpen) { alreadyOpen.focused = true; return }
 
   openWindows.value.push({
     id: nextId++,
+    credits: gifEntry?.credits ?? null, 
     name: label,
     type: 'vimeo',
     vimeoSrc: src,
@@ -935,7 +938,7 @@ function openVimeoFromGif(gifSrc) {
     allowfullscreen
   ></iframe>
   <div class="vimeo-credits">
-    <span class="vimeo-title">{{ win.name }}</span>
+    <!-- <span class="vimeo-title">{{ win.name }}</span> -->
     <span v-if="win.credits">{{ win.credits }}</span>
   </div>
 </div>
