@@ -86,6 +86,15 @@ const vimeoLinks = {
 
 const photos = {
 
+A1:`${R2}/ASB_documentation_W_2.jpg`,
+A2:`${R2}/ASB_documentation_mat_2.jpg`,
+A3:`${R2}/ASB_documentation_mat_final_1.jpg`,
+A4:`${R2}/ASB_documentation_mat_large.jpg`,
+A5:`${R2}/ASB_documentation_overall_3.jpg`,
+A6:`${R2}/ASB_documentation_star_1.jpg`,
+A7:`${R2}/ASB_documentation_star_2.jpg`,
+M:`${R2}/Minca_colombia_2017_2.jpg`,
+
   LT: `${R2}/LT_dossier_visuel_ASB_documentation_overall_2.jpg`,
   louisMar: `${R2}/louisMar+01+2019+7+black+border+.jpg`,
   oli: `${R2}/oliviamainet sac.jpg`,
@@ -527,7 +536,7 @@ photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  pho
               
           ] },
           { label: 'Landscapes', photos: [  photos.aotearoa2023,
-            photos.hotNCold2023, photos.blueSpring2022, photos.aotearoa2018, photos.mincaColumbia2017,
+            photos.hotNCold2023, photos.blueSpring2022, photos.aotearoa2018, photos.mincaColumbia2017, photos.M,
           ] },
           { label: 'BTS photos', photos: [ photos.renForShortBTS,
           photos.linvincibleBTS1, photos.linvincibleBTS2,
@@ -603,6 +612,8 @@ photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  pho
   photos.documentationArchives9,
     ]},
     { label: `A Sacrificed Body - Solo exhibition - Montréal`, photos: [
+photos.LT, photos.A1,  photos.A3, photos.A4, photos.A5,photos.A2, photos.A6, photos.A7,
+
        photos.asbDocumentationAtalleph3,
       photos.asbDocumentationKnife2,
       photos.asbDocumentationKnife1,
@@ -611,7 +622,7 @@ photos.vestibule2023_1,   photos.vestibule2023_2, photos.samuelGougoux2019,  pho
       photos.asbDocumentationCrucifixion1, photos.asbDocumentationCrucifixion2,
       photos.asbDocumentationCrucifixion4, photos.asbDocumentationHand1,
       photos.asbDocumentationHand2,  photos.asbDocumentationMarks1,
-      photos.asbDocumentationMarks2, photos.LT,
+      photos.asbDocumentationMarks2, 
     ]},
     { label: `Strength - Group exhibition - Good Exposure - Auckland`, photos: [
     photos.strength2019,
